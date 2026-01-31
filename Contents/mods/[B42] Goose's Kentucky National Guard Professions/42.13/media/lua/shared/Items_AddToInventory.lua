@@ -42,6 +42,7 @@ function AddToInventory:addCombatEngineerBackpackToInventory(inventory, backpack
 end
 
 function AddToInventory:addStandardBackpackToInventory(inventory, backpack)
+    -- note: the backpack parameter is reassigned here, this is intentional for container population
     backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
     AddToContainer:addStandardRationsToContainer(inventory, backpack);
     AddToContainer:addStandardGearToContainer(inventory, backpack);

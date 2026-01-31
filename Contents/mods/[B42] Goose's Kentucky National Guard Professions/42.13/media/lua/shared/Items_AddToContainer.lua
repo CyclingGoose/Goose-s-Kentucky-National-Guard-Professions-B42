@@ -49,6 +49,7 @@ function AddToContainer:addStandardMilitaryPoliceGearToContainer(inventory, cont
         container:getItemContainer():AddItem("Base.SmokeBomb");
     end
 end
+
 function AddToContainer:addStandardGearToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.CompassDirectional");
     container:getItemContainer():AddItem("Base.Hat_GasMask");
@@ -106,7 +107,7 @@ function AddToContainer:addAdvancedFirstAidToContainer(inventory, container)
 end
 
 function AddToContainer:addMechanicToolsToContainer(inventory, container)
-
+    -- TODO: Reserved for future mechanic-specific tool loadouts
 end
 
 function AddToContainer:addStandardMagazinesToContainer(inventory, container)

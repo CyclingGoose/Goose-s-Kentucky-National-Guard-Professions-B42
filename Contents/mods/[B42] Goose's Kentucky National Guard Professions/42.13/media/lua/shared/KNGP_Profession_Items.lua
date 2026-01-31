@@ -12,7 +12,7 @@ require "Items_AddToContainer";
 require "Items_AddToInventory";
 require "registries";
 
--- Module-level loadout configuration and helpers to avoid recreating tables per-call
+-- this table defines backpack setups for different professions, used in the loadoutByConfig function and defined outside of it to avoid recreating the table each time
 local backpackSetups = {
     standard = function(inventory)
         AddToInventory:addStandardBackpackToInventory(inventory)
@@ -28,6 +28,7 @@ local backpackSetups = {
     end,
 }
 
+-- this table defines the loadout configuration for each profession, used in the loadoutByConfig function and defined outside of it to avoid recreating the table each time
 local professionConfig = {
     infantryman = {
         gear = true,
@@ -65,23 +66,29 @@ local professionConfig = {
         weapons = true,
         ifak = true,
         toolbox = true,
-        webbing = true,
+        mechanicWebbing = true,
         extraHelmet = true,
     },
 }
 
+-- centralized function to add items to inventory based on profession configuration
 local function loadoutByConfig(inventory, playername, prof)
     local config = professionConfig[prof]
     if not config then return end
 
     if config.gear then AddToInventory:addStandardGearToInventory(inventory, playername) end
+
+    -- look up the backpack setup function from the backpackSetups table and call it if it exists
+    -- looks more complex than it is, but cleaner than a bunch of if-else statements
+    -- essentially backpackSetups[config.backpack] gets the function from the table, and if it exists, it calls it with (inventory) as the argument
     if config.backpack and backpackSetups[config.backpack] then backpackSetups[config.backpack](inventory) end
+
     if config.weapons then AddToInventory:addStandardWeaponsToInventory(inventory) end
     if config.ifak then AddToInventory:addStandardIFAKToInventory(inventory) end
     if config.chestrig then AddToInventory:addStandardChestrigToInventory(inventory) end
     if config.toolbox then AddToInventory:addToolboxToInventory(inventory) end
     if config.satchel then AddToInventory:addStandardSatchelToInventory(inventory) end
-    if config.webbing then AddToInventory:addMechanicWebbingToInventory(inventory) end
+    if config.mechanicWebbing then AddToInventory:addMechanicWebbingToInventory(inventory) end
     if config.extraHelmet then inventory:AddItem("Base.Hat_Army") end
 end
 
@@ -116,7 +123,7 @@ local function kngpGearPlayer(_player)
             end
             
             -- this is where the items get added to the inventory base on the profession
-            -- using  a centralized, module-level config-driven loader to avoid recreating tables every time the function is called
+            -- using  a centralized, module-level and config-driven loader to avoid recreating tables every time the function is called
             loadoutByConfig(inventory, playername, prof)
              
         end
