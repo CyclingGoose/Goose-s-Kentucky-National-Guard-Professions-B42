@@ -12,6 +12,79 @@ require "Items_AddToContainer";
 require "Items_AddToInventory";
 require "registries";
 
+-- Module-level loadout configuration and helpers to avoid recreating tables per-call
+local backpackSetups = {
+    standard = function(inventory)
+        AddToInventory:addStandardBackpackToInventory(inventory)
+    end,
+    engineer = function(inventory)
+        AddToInventory:addCombatEngineerBackpackToInventory(inventory)
+    end,
+    traumabag = function(inventory)
+        AddToInventory:addStandardTraumaBagToInventory(inventory)
+    end,
+    militarypolice = function(inventory)
+        AddToInventory:addMilitaryPoliceBackpackToInventory(inventory)
+    end,
+}
+
+local professionConfig = {
+    infantryman = {
+        gear = true,
+        backpack = "standard",
+        weapons = true,
+        ifak = true,
+        chestrig = true,
+    },
+    combatmedic = {
+        gear = true,
+        backpack = "traumabag",
+        weapons = true,
+        satchel = true,
+        ifak = true,
+        chestrig = true,
+    },
+    combatengineer = {
+        gear = true,
+        backpack = "engineer",
+        weapons = true,
+        ifak = true,
+        chestrig = true,
+    },
+    militarypolice = {
+        gear = true,
+        backpack = "militarypolice",
+        weapons = true,
+        ifak = true,
+        chestrig = true,
+        extraHelmet = true,
+    },
+    motortransportoperator = {
+        gear = true,
+        backpack = "standard",
+        weapons = true,
+        ifak = true,
+        toolbox = true,
+        webbing = true,
+        extraHelmet = true,
+    },
+}
+
+local function loadoutByConfig(inventory, playername, prof)
+    local config = professionConfig[prof]
+    if not config then return end
+
+    if config.gear then AddToInventory:addStandardGearToInventory(inventory, playername) end
+    if config.backpack and backpackSetups[config.backpack] then backpackSetups[config.backpack](inventory) end
+    if config.weapons then AddToInventory:addStandardWeaponsToInventory(inventory) end
+    if config.ifak then AddToInventory:addStandardIFAKToInventory(inventory) end
+    if config.chestrig then AddToInventory:addStandardChestrigToInventory(inventory) end
+    if config.toolbox then AddToInventory:addToolboxToInventory(inventory) end
+    if config.satchel then AddToInventory:addStandardSatchelToInventory(inventory) end
+    if config.webbing then AddToInventory:addMechanicWebbingToInventory(inventory) end
+    if config.extraHelmet then inventory:AddItem("Base.Hat_Army") end
+end
+
 local function kngpGearPlayer(_player)
 
         local activate_loadouts = SandboxVars.KNGP.Loadouts;
@@ -43,187 +116,8 @@ local function kngpGearPlayer(_player)
             end
             
             -- this is where the items get added to the inventory base on the profession
-            --
-            -- GEAR INFANTRYMAN
-            --
-            if prof == "infantryman" then
-                --
-                -- STANDARD ISSUE GEAR
-                --
-                print("INFANTRYMAN GEAR IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardGearToInventory(inventory, playername);
-                
-                --
-                -- STANDARD ISSUE BACKPACK
-                --
-                print("INFANTRYMAN BACKPACK IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardBackpackToInventory(inventory, backpack);
-
-                --
-                -- STANDARD ISSUE WEAPONS
-                --
-                print("INFANTRYMAN WEAPONS ARE BEING ADDED TO: ", playername);
-                AddToInventory:addStandardWeaponsToInventory(inventory);
-
-                --
-                -- STANDARD ISSUE FIRST AID KIT
-                --
-                print("INFANTRYMAN FIRST AID KIT IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit);
-
-                --
-                -- STANDARD ISSUE CHESTRIG
-                --
-                print("INFANTRYMAN CHESTRIG IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardChestrigToInventory(inventory, chestrig);
-            end
-
-            -- PROFESSION COMBAT MEDIC
-            if prof == "combatmedic" then
-                --
-                -- STANDARD ISSUE GEAR
-                --
-                print("COMBAT MEDIC GEAR IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardGearToInventory(inventory, playername);
-
-                --
-                -- STANDARD ISSUE TRAUMABAG
-                --
-                print("COMBAT MEDIC TRAUMABAG IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardTraumaBagToInventory(inventory, traumabag);
-
-                --
-                -- STANDARD ISSUE WEAPONS
-                --
-                print("COMBAT MEDIC WEAPONS ARE BEING ADDED TO: ", playername);
-                AddToInventory:addStandardWeaponsToInventory(inventory);
-
-                --
-                -- STANDARD ISSUE SATCHEL
-                --
-                print("COMBAT MEDIC SATCHEL IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardSatchelToInventory(inventory, satchel);
-
-                --
-                -- STANDARD ISSUE FIRST AID KIT
-                --
-                print("COMBAT MEDIC FIRST AID KIT IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit);
-
-                --
-                -- STANDARD ISSUE CHESTRIG
-                --
-                print("COMBAT MEDIC CHESTRIG IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardChestrigToInventory(inventory, chestrig);
-            end
-
-            -- PROFESSION COMBAT ENGINEER
-            if prof == "combatengineer" then
-                --
-                -- STANDARD ISSUE GEAR
-                --
-                print("COMBAT ENGINEER GEAR IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardGearToInventory(inventory, playername);
-                
-                --
-                -- STANDARD ISSUE BACKPACK
-                --
-                print("COMBAT ENGINEER BACKPACK IS BEING ADDED TO: ", playername);
-                AddToInventory:addCombatEngineerBackpackToInventory(inventory, backpack);
-
-                --
-                -- STANDARD ISSUE WEAPONS
-                --
-                print("COMBAT ENGINEER WEAPONS ARE BEING ADDED TO: ", playername);
-                AddToInventory:addStandardWeaponsToInventory(inventory);
-
-                --
-                -- STANDARD ISSUE FIRST AID KIT
-                --
-                print("COMBAT ENGINEER FIRST AID KIT IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit);
-
-                --
-                -- STANDARD ISSUE CHESTRIG
-                --
-                print("COMBAT ENGINEER CHESTRIG IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardChestrigToInventory(inventory, chestrig);
-            end
-            
-            -- PROFESSION MILITARY POLICE
-            if prof == "militarypolice" then
-                --
-                -- STANDARD ISSUE GEAR
-                --
-                print("MILITARY POLICE GEAR IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardGearToInventory(inventory, playername);
-                inventory:AddItem("Base.Hat_Army"); -- Military Helmet Woodland Camo
-
-                --
-                -- STANDARD ISSUE MILITARY POLICE BACKPACK
-                --
-                print("MILITARY POLICE BACKPACK IS BEING ADDED TO: ", playername);
-                AddToInventory:addMilitaryPoliceBackpackToInventory(inventory, backpack);
-
-                --
-                -- STANDARD ISSUE WEAPONS
-                --
-                print("MILITARY POLICE WEAPONS ARE BEING ADDED TO: ", playername);
-                AddToInventory:addStandardWeaponsToInventory(inventory);
-
-                --
-                -- STANDARD ISSUE FIRST AID KIT
-                --
-                print("MILITARY POLICE FIRST AID KIT IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit);
-
-                --
-                -- STANDARD ISSUE CHESTRIG
-                --
-                print("MILITARY POLICE CHESTRIG IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardChestrigToInventory(inventory, chestrig);
-            end
-
-            -- PROFESSION MOTOR TRANSPORT OPERATOR
-            -- 2x Toolbox 1x Chestrig (Those Who Know, Know)
-            if prof == "motortransportoperator" then
-                --
-                -- STANDARD ISSUE GEAR
-                --
-                print("MOTOR TRANSPORT OPERATOR GEAR IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardGearToInventory(inventory, playername);
-                inventory:AddItem("Base.Hat_Army"); -- Military Helmet Woodland Camo
-                
-                --
-                -- STANDARD ISSUE BACKPACK
-                --
-                print("MOTOR TRANSPORT OPERATOR BACKPACK IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardBackpackToInventory(inventory, backpack);
-
-                --
-                -- STANDARD ISSUE TOOLBOX
-                --
-                print("MOTOR TRANSPORT OPERATOR TOOLBOX IS BEING ADDED TO: ", playername);
-                AddToInventory:addToolboxToInventory(inventory);
-                
-                --
-                -- STANDARD ISSUE WEAPONS
-                --
-                print("MOTOR TRANSPORT OPERATOR WEAPONS ARE BEING ADDED TO: ", playername);
-                AddToInventory:addStandardWeaponsToInventory(inventory);
-
-                --
-                -- STANDARD ISSUE FIRST AID KIT
-                --
-                print("MOTOR TRANSPORT OPERATOR FIRST AID KIT IS BEING ADDED TO: ", playername);
-                AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit);
-
-                --
-                -- STANDARD ISSUE ALICE BELT AND SUSPENDERS
-                --
-                print("MOTOR TRANSPORT OPERATOR ALICE BELT AND SUSPENDERS IS BEING ADDED TO: ", playername);
-                AddToInventory:addMechanicWebbingToInventory(inventory);
-            end
+            -- using  a centralized, module-level config-driven loader to avoid recreating tables every time the function is called
+            loadoutByConfig(inventory, playername, prof)
              
         end
 
@@ -234,6 +128,7 @@ local function kngpGearPlayer(_player)
                 inventory = {"Base.Screwdriver"},
 
                 -- what they will wear once they spawn
+                -- it does add it to the inventory first, then equips it
                 equip = {"Base.Vest_BulletArmy",
                     "Base.Trousers_CamoGreen",
                     "Base.Jacket_ArmyCamoGreen",
