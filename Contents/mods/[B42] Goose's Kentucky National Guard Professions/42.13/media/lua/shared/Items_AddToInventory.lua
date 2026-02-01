@@ -10,7 +10,7 @@
 
 -- serves as a utils class
 
-function AddToInventory:addMechanicWebbingToInventory(inventory)
+function AddToInventory:addStandardWebbingToInventory(inventory)
     webbing = inventory:AddItem("Base.Bag_ALICE_BeltSus_Camo");
     AddToContainer:addStandardMagazinesToContainer(inventory, webbing);
 end

@@ -22,7 +22,7 @@ function AddToContainer:addStandardRationsToContainer(inventory, container)
         container:getItemContainer():AddItem("Base.BreadSlices");
     end
 
-    container:getItemContainer():AddItem("Base.TeaBag2");
+    container:getItemContainer():AddItem("Base.Teabag2");
     container:getItemContainer():AddItem("Base.Chocolate");
     container:getItemContainer():AddItem("CandyFruitSlices");
 end
@@ -63,7 +63,7 @@ function AddToContainer:addToolsToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.BallPeenHammer");
     container:getItemContainer():AddItem("Base.Saw");
     container:getItemContainer():AddItem("Base.Pliers");
-    container:getItemContainer():AddItem("Base.MultiTool");
+    container:getItemContainer():AddItem("Base.Multitool");
 end
 
 function AddToContainer:addStandardFirstAidToContainer(inventory, container)

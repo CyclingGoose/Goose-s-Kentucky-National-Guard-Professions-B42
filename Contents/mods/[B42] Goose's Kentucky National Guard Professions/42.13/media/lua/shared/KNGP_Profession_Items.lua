@@ -12,7 +12,8 @@ require "Items_AddToContainer";
 require "Items_AddToInventory";
 require "registries";
 
--- this table defines backpack setups for different professions, used in the loadoutByConfig function and defined outside of it to avoid recreating the table each time
+-- all these tables serve to modularize the loadout functions, making it easier to add or remove specific setups without touching the main loadout function
+-- all of them are created outside of the main loadout function to avoid recreating them each time the function is called
 local backpackSetups = {
     standard = function(inventory)
         AddToInventory:addStandardBackpackToInventory(inventory)
@@ -28,45 +29,75 @@ local backpackSetups = {
     end,
 }
 
+local webbingSetups = {
+    standard = function(inventory)
+        AddToInventory:addStandardWebbingToInventory(inventory)
+    end,
+}
+
+local satchelSetups = {
+    standard = function(inventory)
+        AddToInventory:addStandardSatchelToInventory(inventory)
+    end,
+}
+
+local chestrigSetups = {
+    standard = function(inventory)
+        AddToInventory:addStandardChestrigToInventory(inventory)
+    end,
+}
+
+local weaponSetups = {
+    standard = function(inventory)
+        AddToInventory:addStandardWeaponsToInventory(inventory)
+    end,
+}
+
+local toolboxSetups = {
+    standard = function(inventory)
+        AddToInventory:addToolboxToInventory(inventory)
+    end,
+}
+
 -- this table defines the loadout configuration for each profession, used in the loadoutByConfig function and defined outside of it to avoid recreating the table each time
 local professionConfig = {
     infantryman = {
         gear = true,
         backpack = "standard",
-        weapons = true,
+        weapons = "standard",
         ifak = true,
-        chestrig = true,
+        chestrig = "standard",
     },
     combatmedic = {
         gear = true,
         backpack = "traumabag",
-        weapons = true,
-        satchel = true,
+        weapons = "standard",
+        satchel = "standard",
         ifak = true,
-        chestrig = true,
+        chestrig = "standard",
     },
     combatengineer = {
         gear = true,
         backpack = "engineer",
-        weapons = true,
+        weapons = "standard",
         ifak = true,
-        chestrig = true,
+        chestrig = "standard",
     },
     militarypolice = {
         gear = true,
         backpack = "militarypolice",
-        weapons = true,
+        weapons = "standard",
         ifak = true,
-        chestrig = true,
+        chestrig = "standard",
         extraHelmet = true,
     },
     motortransportoperator = {
         gear = true,
         backpack = "standard",
-        weapons = true,
+        weapons = "standard",
         ifak = true,
-        toolbox = true,
-        mechanicWebbing = true,
+        toolbox = "standard",
+        webbing = "standard",
         extraHelmet = true,
     },
 }
@@ -78,17 +109,17 @@ local function loadoutByConfig(inventory, playername, prof)
 
     if config.gear then AddToInventory:addStandardGearToInventory(inventory, playername) end
 
-    -- look up the backpack setup function from the backpackSetups table and call it if it exists
+    -- looks up the backpack setup function from the backpackSetups table and call it if it exists
     -- looks more complex than it is, but cleaner than a bunch of if-else statements
-    -- essentially backpackSetups[config.backpack] gets the function from the table, and if it exists, it calls it with (inventory) as the argument
+    -- we need two checks here: one to see if a backpack is defined in the config, and another to see if that backpack setup exists in the backpackSetups table
+    -- then the specific backpack setup function is called, with the inventory as parameter as is usual
     if config.backpack and backpackSetups[config.backpack] then backpackSetups[config.backpack](inventory) end
-
-    if config.weapons then AddToInventory:addStandardWeaponsToInventory(inventory) end
+    if config.weapons and weaponSetups[config.weapons] then weaponSetups[config.weapons](inventory) end
     if config.ifak then AddToInventory:addStandardIFAKToInventory(inventory) end
-    if config.chestrig then AddToInventory:addStandardChestrigToInventory(inventory) end
-    if config.toolbox then AddToInventory:addToolboxToInventory(inventory) end
-    if config.satchel then AddToInventory:addStandardSatchelToInventory(inventory) end
-    if config.mechanicWebbing then AddToInventory:addMechanicWebbingToInventory(inventory) end
+    if config.chestrig then chestrigSetups[config.chestrig](inventory) end
+    if config.toolbox then toolboxSetups[config.toolbox](inventory) end
+    if config.satchel then satchelSetups[config.satchel](inventory) end
+    if config.webbing then webbingSetups[config.webbing](inventory) end
     if config.extraHelmet then inventory:AddItem("Base.Hat_Army") end
 end
 
@@ -232,4 +263,3 @@ local function kngpGearPlayer(_player)
 end
 
 Events.OnNewGame.Add(kngpGearPlayer)
-
