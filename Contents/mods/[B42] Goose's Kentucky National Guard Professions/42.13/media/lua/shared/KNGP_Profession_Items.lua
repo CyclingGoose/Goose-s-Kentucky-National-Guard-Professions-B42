@@ -1,3 +1,10 @@
+-- "An idiot admires complexity, a genius admires simplicity. An idiot, the more complicated something is, the more he will admire it.
+-- If you make something so clusterfucked he can't understand it, he's gonna think you're a god because you made it so complicated, nobody can understand it.
+-- That's how they write academic journals. They try to make it so complicated people think they're a genius."
+-- - Terry A. Davis
+--
+-- (even tho I don't always follow his advice myself I admire terry's wisdom)
+--
 -- SPDX-License-Identifier: MIT
 --
 -- Copyright © 2025 CyclingGoose
@@ -14,6 +21,7 @@ require "registries";
 
 -- all these tables serve to modularize the loadout functions, making it easier to add or remove specific setups without touching the main loadout function
 -- all of them are created outside of the main loadout function to avoid recreating them each time the function is called
+-- each table contains functions that correspond to specific setups defined in the profession configuration tables below
 local backpackSetups = {
     standard = function(inventory)
         AddToInventory:addStandardBackpackToInventory(inventory, backpack)
@@ -75,8 +83,14 @@ local gearSetups = {
 }
 
 
--- these tables define the loadout configurations for each mod, if a certain mod is loaded a different config gets returned in getConfigForProfession(). Defined outside of the main function to avoid recreating the table each time
--- a player spawns
+-- these tables define the loadout configurations for each mod, if a certain mod is loaded a different config gets returned in getConfigForProfession().
+-- defined outside of the main function to avoid recreating the table each time a player spawns
+-- this allows compatibility with both vanilla and AliceGear mod loadouts
+--
+-- to load a certain loadout confguaration define local config = getConfigForProfession(prof) in the main function
+-- this will automatically return the correct configuration based on whether AliceGear is activated or not
+--
+-- AliceGear suffix = AB
 local professionConfigAB = {
     infantryman = {
         gear = "alice",
@@ -172,7 +186,7 @@ end
 -- initalized outside of main function to avoid recreating the table each time
 -- used in setupGear(prof) to add items to inventory and equip certain clothing based on profession
 local professionDictionary = {
-            
+
     infantryman = {
         -- essentially their "special" item, just gets added to the inventory
         inventory = {"Base.Screwdriver"},
@@ -214,7 +228,7 @@ local professionDictionary = {
 
     combatengineer= {
                 
-        inventory = {"Base.Axe"},
+        inventory = {"Base.Axe"}, -- Fire Axe
 
         equip = {"Base.Vest_BulletArmy",
             "Base.Trousers_CamoGreen",
@@ -267,7 +281,7 @@ local professionDictionary = {
 
 }
 
--- centralized function to add items to inventory based on profession configuration
+-- function to add items to inventory based on profession configuration
 local function loadoutByConfig(inventory, playername, prof)
 
     local config = getConfigForProfession(prof)
@@ -305,8 +319,9 @@ local function kngpGearPlayer(_player)
             local inventory = player:getInventory();
             local professionCategories = {"inventory","equip"}
 
-            -- iterates though the professionCategories table and adds items to inventory or equips them based on the professionDictionary table
-            -- i wouldn't touch this if you don't know what you're doing
+            -- iterates though the professionCategories table and adds items to inventory or equips them based on if they are in the inventory or equip table
+            -- i wouldn't touch this if you don't know what you're doing, horrible way to do it (nesting if statements inside loops) but it works and is modular enough for my needs
+            -- might optimize eventually but not a priority right now
             for i,v in ipairs(professionCategories) do
                 for index, value in ipairs(professionDictionary[prof][v]) do
                     if v == "inventory" then
@@ -328,7 +343,7 @@ local function kngpGearPlayer(_player)
         if activate_loadouts then
             setupGear(prof);
         end
-
 end
 
+-- OnNewGame is triggered when you create a new character and click on the "Click to Start", NOT when you load a save
 Events.OnNewGame.Add(kngpGearPlayer)

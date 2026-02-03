@@ -1,3 +1,10 @@
+-- "An idiot admires complexity, a genius admires simplicity. An idiot, the more complicated something is, the more he will admire it.
+-- If you make something so clusterfucked he can't understand it, he's gonna think you're a god because you made it so complicated, nobody can understand it.
+-- That's how they write academic journals. They try to make it so complicated people think they're a genius."
+-- - Terry A. Davis
+--
+-- (even tho I don't always follow his advice myself I admire terry's wisdom)
+--
 -- SPDX-License-Identifier: MIT
 --
 -- Copyright © 2025 CyclingGoose
@@ -21,7 +28,6 @@ function AddToContainer:addStandardRationsToContainer(inventory, container)
     for x=1, 2 do
         container:getItemContainer():AddItem("Base.GranolaBar");
         container:getItemContainer():AddItem("Base.CannedCornedBeef");
-        container:getItemContainer():AddItem("Base.WaterBottle");
         container:getItemContainer():AddItem("Base.BreadSlices");
     end
 
