@@ -1,0 +1,76 @@
+[h1]Goose's Kentucky National Guard Professions[/h1]
+[i]Authentic 1993 KYNG professions, loadouts, and equipment for the Knox Exclusion Zone.[/i]
+
+
+This mod adds five historically grounded professions drawn from the units and equipment the Kentucky National Guard would realistically have deployed during the 1993 Knox Exclusion Zone operation. Each profession comes with a profession-appropriate loadout with realistic ammo counts, rations and field equipment that are designed to be balanced, immersive and true to the era. If you want your playthrough to actually feel like you survived the first hours of the apocalypse as a member of the military, this is where you start.
+
+[h2]Professions[/h2]
+
+[b]Combat Engineer[/b] [i](MOS 12B)[/i]
+Field engineer trained in demolitions and obstacle clearance. Equipped for breaching, fortification, and improvised munitions.
+[list]
+[*][b]Special:[/b] Can craft pipe bombs, fire bombs, and smoke bombs
+[*]Full loadout details: [url=https://steamcommunity.com/workshop/filedetails/discussion/3659605156/806844795448268620/]Forum Post[/url]
+[/list]
+
+[b]Combat Medic[/b] [i](MOS 91B)[/i]
+Battalion-level medical specialist. Carries a full trauma kit and field pharmaceuticals enough to give field care and sustain a squad of four.
+[list]
+[*][b]Special:[/b] Starts with the Desensitized trait
+[*]Full loadout details: [url=https://steamcommunity.com/workshop/filedetails/discussion/3659605156/806844795448268663/]Forum Post[/url]
+[/list]
+
+[b]Infantryman[/b] [i](MOS 11B)[/i]
+Standard light infantryman. Carries a full combat load with appropriate rations, protective equipment, and issued ammunition.
+[list]
+[*]Full loadout details: [url=https://steamcommunity.com/workshop/filedetails/discussion/3659605156/806844795448268688/]Forum Post[/url]
+[/list]
+
+[b]Military Police[/b] [i](MOS 95B)[/i]
+Perimeter security and law enforcement specialist. Equipped for checkpoint duty and civil control operations within the KEZ.
+[list]
+[*]Full loadout details: [url=https://steamcommunity.com/workshop/filedetails/discussion/3659605156/806844795448268772/]Forum Post[/url]
+[/list]
+
+[b]Motor Transport Operator[/b] [i](MOS 88M)[/i]
+Logistics driver and vehicle operator. Keeps convoys moving and knows how to get an engine running without a key.
+[list]
+[*][b]Special:[/b] Can hotwire vehicles
+[*]Full loadout details: [url=https://steamcommunity.com/workshop/filedetails/discussion/3659605156/806844795448268841/]Forum Post[/url]
+[/list]
+
+[i]NOTE: MOS designations reflect 1993 U.S. Army classifications. Some are outdated by modern standards, this is intentional for period accuracy.[/i]
+
+[h2]Features[/h2]
+[list]
+[*]Each profession awards a unique, era-accurate [b]loadout[/b] on spawn with realistic ammo counts, rations, gas masks, and field gear where applicable. Loadouts can be toggled in Sandbox Settings (enabled by default).
+[*]All five professions grant a [b]Military ID card[/b] item exclusive to KYNG profession selections.
+[*]Loadouts are designed to be balanced and not overpowered, let me know of any balancing suggestions.
+[*]Equipment reflects what KYNG units would actually have been issued during a 1993 containment deployment.
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*][b]Minimum version:[/b] Build 42.13.0 and above
+[*][b]Sandbox Settings:[/b] Enable Loadout (enabled by default)
+[*][b] Multiplayer compatible[/b]
+[/list]
+
+[b]Recommended: Alice Gear[/b]
+If the [b]Alice Gear[/b] mod is active, this mod will automatically swap applicable equipment to the gear that mod adds, significantly improving immersion. Running both together is strongly recommended.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3610005735&searchtext=alice+gear
+
+[h2]Links[/h2]
+[list]
+[*][b]GitHub:[/b] [url=https://github.com/CyclingGoose]Source code, changelogs & issue tracker[/url]
+[*][b]Ko-fi:[/b] [url=https://ko-fi.com/cyclinggoose]Support development or commission a mod[/url]
+[/list]
+
+[h2]License & Usage[/h2]
+[code]This mod is released under the [b]MIT License[/b]. You are free to use, modify, and build upon this work with attribution. [b]This mod may NOT be included in any modpack under any circumstances, no exceptions.[/b] For full terms, refer to [b]LICENSE.txt[/b] included with the mod files.[/code]
+[i]If you have questions dm me on discord: [b]cycling_goose[/b] 
+or friend me on steam and shoot me a message I'll be happy to answer any questions.[/i]
+[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner1.png[/img][/url]
+
+Workshop ID: 3659605156
+Mod ID: kentuckynationalguardprofessionsgoose
