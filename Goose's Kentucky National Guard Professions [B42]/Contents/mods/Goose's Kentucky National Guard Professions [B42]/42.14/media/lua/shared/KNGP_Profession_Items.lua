@@ -346,4 +346,6 @@ local function kngpGearPlayer(_player)
 end
 
 -- OnNewGame is triggered when you create a new character and click on the "Click to Start", NOT when you load a save
+if not isClient() then
 Events.OnNewGame.Add(kngpGearPlayer)
+end
