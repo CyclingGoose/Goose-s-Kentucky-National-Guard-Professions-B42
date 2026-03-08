@@ -200,7 +200,7 @@ local professionDictionary = {
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_FingerlessLeatherGloves_Black",
-            "Base.WristWatch_Left_DigitalBlack",
+            "Base.WristWatch_Right_DigitalBlack",
             "Base.Socks_Heavy",
             "Base.Boxers_White",
             "Base.HolsterSimple_Green",
@@ -219,11 +219,12 @@ local professionDictionary = {
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_Surgical",
-            "Base.WristWatch_Left_DigitalBlack",
+            "Base.WristWatch_Right_DigitalBlack",
             "Base.Socks_Heavy",
             "Base.Boxers_White",
             "Base.HolsterSimple_Green",
-            "Base.Vest_DefaultTEXTURE"},
+            "Base.Vest_DefaultTEXTURE",
+            "KNGP.NGMedicArmband"},
     },
 
     combatengineer= {
@@ -237,18 +238,19 @@ local professionDictionary = {
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_FingerlessLeatherGloves_Black",
-            "Base.WristWatch_Left_DigitalBlack",
+            "Base.WristWatch_Right_DigitalBlack",
             "Base.Socks_Heavy",
             "Base.Boxers_White",
             "Base.HolsterSimple_Green",
-            "Base.Vest_DefaultTEXTURE"},
+            "Base.Vest_DefaultTEXTURE",
+            "KNGP.NGEngineerArmband"},
     },
 
     militarypolice = {
                 
         inventory = {"Base.Nightstick"},
 
-        equip = {"Base.Vest_BulletPolice",
+        equip = {"Base.Vest_BulletArmy",
             "Base.Trousers_CamoGreen",
             "Base.Jacket_ArmyCamoGreen",
             "Base.Hat_BeretArmy",
@@ -256,11 +258,12 @@ local professionDictionary = {
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_FingerlessLeatherGloves_Black",
-            "Base.WristWatch_Left_DigitalBlack",
+            "Base.WristWatch_Right_DigitalBlack",
             "Base.Socks_Heavy",
             "Base.Boxers_White",
             "Base.HolsterSimple_Green",
-            "Base.Vest_DefaultTEXTURE"},
+            "Base.Vest_DefaultTEXTURE",
+            "KNGP.NGMPBrassardLeft"},
     },
 
     motortransportoperator = {
@@ -272,7 +275,7 @@ local professionDictionary = {
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_FingerlessLeatherGloves_Black",
-            "Base.WristWatch_Left_DigitalBlack",
+            "Base.WristWatch_Right_DigitalBlack",
             "Base.Socks_Heavy",
             "Base.Boxers_White",
             "Base.HolsterSimple_Green",
@@ -316,6 +319,8 @@ local function kngpGearPlayer(_player)
 
         local function setupGear(prof)
             
+            if not professionDictionary[prof] then return end
+
             local inventory = player:getInventory();
             local professionCategories = {"inventory","equip"}
 

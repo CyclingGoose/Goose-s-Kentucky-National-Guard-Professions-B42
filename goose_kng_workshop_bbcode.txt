@@ -47,6 +47,7 @@ Logistics driver and vehicle operator. Keeps convoys moving and knows how to get
 [*]All five professions grant a [b]Military ID card[/b] item exclusive to KYNG profession selections.
 [*]Loadouts are designed to be balanced and not overpowered, let me know of any balancing suggestions.
 [*]Equipment reflects what KYNG units would actually have been issued during a 1993 containment deployment.
+[*]This mod adds a medic and engineer armband, MP brassard and a military id card as items (not spawning as loot).
 [/list]
 
 [h2]Compatibility[/h2]
@@ -54,6 +55,7 @@ Logistics driver and vehicle operator. Keeps convoys moving and knows how to get
 [*][b]Minimum version:[/b] Build 42.13.0 and above
 [*][b]Sandbox Settings:[/b] Enable Loadout (enabled by default)
 [*][b] Multiplayer compatible[/b]
+[*][b] Can be added to already existing saves, but not removed from them[/b]
 [/list]
 
 [b]Recommended: Alice Gear[/b]
@@ -68,6 +70,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3610005735&searchtext=ali
 
 [h2]License & Usage[/h2]
 [code]This mod is released under the [b]MIT License[/b]. You are free to use, modify, and build upon this work with attribution. [b]This mod may NOT be included in any modpack under any circumstances, no exceptions.[/b] For full terms, refer to [b]LICENSE.txt[/b] included with the mod files.[/code]
+
+[code]The armband and brassard model were taken, with permission from the creator, from the [b][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3409836763]Support Corps [OBSOLETE][/url][/b] mod.[/code]
 [i]If you have questions dm me on discord: [b]cycling_goose[/b] 
 or friend me on steam and shoot me a message I'll be happy to answer any questions.[/i]
 [url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner1.png[/img][/url]

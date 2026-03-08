@@ -1,3 +1,7 @@
 ItemName_EN = {
     ItemName_KNGP.MilitaryIDCard = "Military ID Card",
+    ItemName_KNGP.NGEngineerArmband = "201st Engineer Battalion Armband",
+    ItemName_KNGP.NGMedicArmband = "917th Medical Company Armband",
+    ItemName_KNGP.NGMPBrassardLeft = "Military Police Brassard",
+    ItemName_KNGP.NGMPBrassardRight = "Military Police Brassard",
 }
