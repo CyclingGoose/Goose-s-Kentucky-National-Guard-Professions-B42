@@ -1,7 +1,6 @@
 [h1]Goose's Kentucky National Guard Professions[/h1]
 [i]Authentic 1993 KYNG professions, loadouts, and equipment for the Knox Exclusion Zone.[/i]
 
-
 This mod adds five historically grounded professions drawn from the units and equipment the Kentucky National Guard would realistically have deployed during the 1993 Knox Exclusion Zone operation. Each profession comes with a profession-appropriate loadout with realistic ammo counts, rations and field equipment that are designed to be balanced, immersive and true to the era. If you want your playthrough to actually feel like you survived the first hours of the apocalypse as a member of the military, this is where you start.
 
 [h2]Professions[/h2]
