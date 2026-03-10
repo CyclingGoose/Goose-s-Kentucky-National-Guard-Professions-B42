@@ -56,10 +56,16 @@ function AddToContainer:addStandardMilitaryPoliceGearToContainer(inventory, cont
     end
 end
 
-function AddToContainer:addStandardGearToContainer(inventory, container)
-    container:getItemContainer():AddItem("Base.CompassDirectional");
+function AddToContainer:addGasmaskToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.Hat_GasMask");
     container:getItemContainer():AddItem("Base.GasmaskFilter");
+end
+
+function AddToContainer:addStandardGearToContainer(inventory, container)
+    container:getItemContainer():AddItem("Base.CompassDirectional");
+    if not getActivatedMods():contains("AliceGear") then
+        AddToContainer:addGasmaskToContainer(inventory, container);
+    end
 end
 
 function AddToContainer:addToolsToContainer(inventory, container)
@@ -125,6 +131,7 @@ function AddToContainer:addStandardMagazinesToContainer(inventory, container)
         container:getItemContainer():AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
     end
 end
+
 --
 -- VANILLA ITEMS ONLY
 --

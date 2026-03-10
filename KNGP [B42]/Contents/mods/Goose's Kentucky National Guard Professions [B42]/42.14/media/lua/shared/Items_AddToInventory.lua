@@ -152,12 +152,6 @@ function AddToInventory:addABSatchelToInventory(inventory, satchel)
     AddToContainer:addStandardGearToContainer(inventory, satchel);
 end
 
-function AddToInventory:addABTraumaBagToInventory(inventory, traumabag)
-    traumabag = inventory:AddItem("ALICE.AliceMedicalBag");
-    AddToContainer:addAdvancedFirstAidToContainer(inventory, traumabag);
-    traumabag:setName("Unit One Pack");
-end
-
 --
 -- MOD FUNCTIONS: Alice Belts
 --

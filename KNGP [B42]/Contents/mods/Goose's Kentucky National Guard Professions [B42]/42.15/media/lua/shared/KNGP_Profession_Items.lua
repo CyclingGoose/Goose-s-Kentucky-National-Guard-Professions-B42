@@ -79,6 +79,7 @@ local gearSetups = {
     end,
     alice = function(inventory, playername)
         AddToInventory:addABGearToInventory(inventory, playername)
+        AddToInventory:addABMaskPouchToInventory(inventory, maskpouch)
     end,
 }
 

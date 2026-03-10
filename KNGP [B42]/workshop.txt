@@ -1,3 +1,3 @@
-version=1.22
+version=1.23
 title=Goose's Kentucky National Guard Professions [B42.15.0] [MP]
 description=Adds Realistic Professions For The Kentucky National Guard. The Goal of The Mod is Immersion and Gameplay Balance
