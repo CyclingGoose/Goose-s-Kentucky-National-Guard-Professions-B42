@@ -22,7 +22,6 @@
 --
 function AddToInventory:addStandardWebbingToInventory(inventory, webbing)
     webbing = inventory:AddItem("Base.Bag_ALICE_BeltSus_Camo");
-    AddToContainer:addStandardMagazinesToContainer(inventory, webbing);
 end
 
 function AddToInventory:addStandardGearToInventory(inventory, playername)
@@ -63,7 +62,6 @@ end
 
 function AddToInventory:addStandardChestrigToInventory(inventory, chestrig)
     chestrig = inventory:AddItem("Base.Bag_ChestRig");
-    AddToContainer:addStandardMagazinesToContainer(inventory, chestrig);
 end
 
 function AddToInventory:addStandardTraumaBagToInventory(inventory, traumabag)
@@ -79,16 +77,43 @@ end
 
 function AddToInventory:addStandardWeaponsToInventory(inventory)
     inventory:AddItem("Base.AssaultRifle"); -- M16 Assault Rifle
-    inventory:AddItem("Base.556Clip"):setCurrentAmmoCount(30);
-
     inventory:AddItem("Base.Pistol"); -- M9 Pistol
-    inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+
+    for x = 1, 3 do
+    inventory:AddItem("Base.556Clip"):setCurrentAmmoCount(30);
+    end
+
+    for x = 1, 2 do
+       inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+    end
+end
+
+function AddToInventory:addLightWeaponsToInventory(inventory)
+    inventory:AddItem("Base.Pistol"); -- M9 Pistol
+    
+    for x = 1, 3 do
+       inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+    end
 end
 
 function AddToInventory:addStandardSatchelToInventory(inventory, satchel)
     satchel = inventory:AddItem("Base.Bag_Satchel_Military");
     AddToContainer:addStandardRationsToContainer(inventory, satchel);
     AddToContainer:addStandardGearToContainer(inventory, satchel);
+end
+
+function AddToInventory:addCBRNSatchelToInventory(inventory, satchel)
+    satchel = inventory:AddItem("Base.Bag_Satchel_Military");
+    AddToContainer:addStandardRationsToContainer(inventory, satchel);
+    AddToContainer:addStandardGearToContainer(inventory, satchel);
+    AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+end
+
+function AddToInventory:addSCROSatchelToInventory(inventory, satchel)
+    satchel = inventory:AddItem("Base.Bag_Satchel_Military");
+    AddToContainer:addStandardRationsToContainer(inventory, satchel);
+    AddToContainer:addStandardGearToContainer(inventory, satchel);
+    AddToContainer:addSCROItemsToContainer(inventory, satchel);
 end
 
 function AddToInventory:addStandardRationsToInventory(inventory)
@@ -143,7 +168,6 @@ end
 
 function AddToInventory:addABWebbingToInventory(inventory, webbing)
     webbing = inventory:AddItem("ALICE.AliceVest4P1C1ETight");
-    AddToContainer:addStandardMagazinesToContainer(inventory, webbing);
 end
 
 function AddToInventory:addABSatchelToInventory(inventory, satchel)
@@ -152,9 +176,23 @@ function AddToInventory:addABSatchelToInventory(inventory, satchel)
     AddToContainer:addStandardGearToContainer(inventory, satchel);
 end
 
-function AddToInventory:addABMaskPouchToInventory(inventory, maskpouch)
+function AddToInventory:addABCBRNSatchelToInventory(inventory, satchel)
+    satchel = inventory:AddItem("ALICE.AliceFieldpack");
+    AddToContainer:addABRationsToContainer(inventory, satchel);
+    AddToContainer:addStandardGearToContainer(inventory, satchel);
+    AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+end
+
+function AddToInventory:addABSCROSatchelToInventory(inventory, satchel)
+    satchel = inventory:AddItem("ALICE.AliceFieldpack");
+    AddToContainer:addABRationsToContainer(inventory, satchel);
+    AddToContainer:addStandardGearToContainer(inventory, satchel);
+    AddToContainer:addSCROItemsToContainer(inventory, satchel);
+end
+
+function AddToInventory:addABMaskPouchToInventory(inventory, maskpouch, player)
     maskpouch = inventory:AddItem("ALICE.GasMaskPouchThigh");
-    AddToContainer:addGasmaskToContainer(inventory, maskpouch);
+    AddToContainer:addGasmaskToContainer(inventory, maskpouch, player);
 end
 
 --

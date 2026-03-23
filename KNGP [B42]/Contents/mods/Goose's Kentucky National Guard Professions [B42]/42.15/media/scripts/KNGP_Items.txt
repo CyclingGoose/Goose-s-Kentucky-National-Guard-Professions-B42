@@ -30,6 +30,7 @@ module KNGP {
         WeaponHitArmourSound = ArmourMeleeHitSportsPadding,
         Weight = 0.5,
         DiscomfortModifier = 0.05,
+        Tooltip = Tooltip_MPBrassard,
         Tags = base:ignorezombiedensity,
         ConditionMax = 5,
         ConditionLowerChanceOneIn = 3,
@@ -55,6 +56,7 @@ module KNGP {
         WeaponHitArmourSound = ArmourMeleeHitSportsPadding,
         Weight = 0.5,
         DiscomfortModifier = 0.05,
+        Tooltip = Tooltip_MPBrassard,
         Tags = base:ignorezombiedensity,
         ConditionMax = 5,
         ConditionLowerChanceOneIn = 3,
@@ -69,7 +71,7 @@ module KNGP {
         Weight = 0.01,
 	    Icon = NGEngineerArmband,
 	    CanHaveHoles = false,
-        Tooltip = Tooltip_Left,
+        Tooltip = Tooltip_EngineerArmband,
         Tags = Military,	
 	    WorldStaticModel = NGEngineerArmbandGround,
 	}
@@ -83,8 +85,22 @@ module KNGP {
         Weight = 0.01,
 	    Icon = NGMedicArmband,
 	    CanHaveHoles = false,
-        Tooltip = Tooltip_Left,
+        Tooltip = Tooltip_MedicArmband,
         Tags = Military,	
 	    WorldStaticModel = NGMedicArmbandGround,
+	}
+
+    item NGSupportArmband
+	{
+	    DisplayCategory = Accessory,
+	    ItemType = base:clothing,
+	    ClothingItem = NGSupportArmband,
+	    BodyLocation = base:forearm_left,
+        Weight = 0.01,
+	    Icon = NGSupportArmband,
+	    CanHaveHoles = false,
+        Tooltip = Tooltip_SupportArmband,
+        Tags = Military,	
+	    WorldStaticModel = NGSupportArmbandGround,
 	}
 }

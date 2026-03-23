@@ -12,5 +12,11 @@
     "UI_profdesc_KNG_CombatEngineer": "12 Bravo - Fight As Kentuckians",
 
     "UI_prof_KNG_MotorTransportOperator": "Kentucky National Guard Motor Transport Operator",
-    "UI_profdesc_KNG_MotorTransportOperator": "88 Mike - Fight As Kentuckians"
+    "UI_profdesc_KNG_MotorTransportOperator": "88 Mike - Fight As Kentuckians",
+
+    "UI_prof_KNG_SingleChannelRadioOperator": "Kentucky National Guard Single Channel Radio Operator",
+    "UI_profdesc_KNG_SingleChannelRadioOperator": "31 Charlie - Fight As Kentuckians",
+
+    "UI_prof_KNG_CBRNSpecialist": "Kentucky National Guard CBRN Specialist",
+    "UI_profdesc_KNG_CBRNSpecialist": "74 Delta - Fight As Kentuckians"
 }

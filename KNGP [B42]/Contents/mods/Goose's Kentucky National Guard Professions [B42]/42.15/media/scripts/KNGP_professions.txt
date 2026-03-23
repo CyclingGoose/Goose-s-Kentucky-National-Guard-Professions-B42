@@ -20,7 +20,7 @@ module KNGProfessions
         UIDescription = UI_profdesc_KNG_CombatMedic,
         IconPathName = kngp_profession_default,
         GrantedTraits = base:desensitized,
-        XPBoosts = Aiming=3;Reloading=2;Fitness=2;Sprinting=2;Strength=2;Doctor=4;Nimble=2;SmallBlade=1,
+        XPBoosts = Aiming=3;Reloading=2;Fitness=2;Sprinting=2;Strength=2;Doctor=4;Nimble=2;SmallBlade=1;Butchering=1,
     }
 
     /* Kentucky National Guard Military Police */
@@ -31,7 +31,8 @@ module KNGProfessions
         UIName = UI_prof_KNG_MilitaryPolice,
         UIDescription = UI_profdesc_KNG_MilitaryPolice,
         IconPathName = kngp_profession_default,
-        XPBoosts = Aiming=2;Reloading=1;Sprinting=2;Strength=1;Nimble=2;SmallBlunt=2;Sneak=2;Doctor=1,
+        GrantedTraits = base:nightowl,
+        XPBoosts = Aiming=2;Reloading=1;Sprinting=2;Strength=1;Nimble=2;Lightfoot=1;SmallBlunt=2;Sneak=2;Doctor=1,
     }
 
     /* Kentucky National Guard Combat Engineer */
@@ -43,18 +44,42 @@ module KNGProfessions
         UIDescription = UI_profdesc_KNG_CombatEngineer,
         IconPathName = kngp_profession_default,
         XPBoosts = Aiming=4;Reloading=2;Sprinting=2;Strength=3;Fitness=3;Nimble=1;Woodwork=2;Maintenance=1;Axe=1;SmallBlunt=1;Doctor=1,
-        GrantedRecipes = MakeAerosolBomb;MakeFlameBomb;MakePipeBomb;MakeSmokeBomb,
+        GrantedRecipes = MakeAerosolBomb;MakeFlameBomb;MakePipeBomb;MakeSmokeBomb;MakeBarbedWire,
     }
 
     /* Kentcuky National Guard Motor Transport Operator */
     character_profession_definition kngprofessions:motortransportoperator
     {
         CharacterProfession = kngprofessions:motortransportoperator,
-        Cost = -14,
+        Cost = -12,
         UIName = UI_prof_KNG_MotorTransportOperator,
         UIDescription = UI_profdesc_KNG_MotorTransportOperator,
         IconPathName = kngp_profession_default,
         XPBoosts = Aiming=2;Reloading=1;Sprinting=2;Strength=2;Mechanics=3;SmallBlunt=1;Electricity=1;Fitness=1;Doctor=1,
         GrantedRecipes = Basic Mechanics;Intermediate Mechanics;Advanced Mechanics,
+    }
+
+    /* Kentcuky National Guard Single Channel Radio Operator */
+    character_profession_definition kngprofessions:singlechannelradiooperator
+    {
+        CharacterProfession = kngprofessions:singlechannelradiooperator,
+        Cost = -14,
+        UIName = UI_prof_KNG_SingleChannelRadioOperator,
+        UIDescription = UI_profdesc_KNG_SingleChannelRadioOperator,
+        IconPathName = kngp_profession_default,
+        XPBoosts = Aiming=3;Reloading=2;Sprinting=2;Strength=3;Electricity=4;Fitness=2;Doctor=1,
+        GrantedRecipes = Generator;MakeRemoteControllerV1;MakeRemoteControllerV2;MakeRemoteControllerV3;MakeRemoteTrigger;MakeTimer;CraftMakeshiftRadio;CraftMakeshiftHAMRadio;CraftMakeshiftWalkieTalkie;MakeImprovisedFlashlight;MakeImprovisedLantern;MakeImprovisedLighter,
+    }
+
+    /* Kentcuky National Guard CBRN Specialist */
+    character_profession_definition kngprofessions:cbrnspecialist
+    {
+        CharacterProfession = kngprofessions:cbrnspecialist,
+        Cost = -12,
+        UIName = UI_prof_KNG_CBRNSpecialist,
+        UIDescription = UI_profdesc_KNG_CBRNSpecialist,
+        IconPathName = kngp_profession_default,
+        XPBoosts = Aiming=2;Reloading=1;Sprinting=2;Strength=2;Fitness=2;Doctor=2;Lightfoot=1;PlantScavenging=1,
+        GrantedRecipes = MakeMildewCure;MakeFliesCureFromCigarettes;MakeFliesCureFromLooseTobacco;MakeFliesCureFromChewingTobacco;MakeAphidsCure;MakeStickTrap;MakeSnareTrap;MakeWoodenBoxTrap;MakeTrapBox;MakeCageTrap;MakeCraftedGasMaskFilter;MakeImprovisedGasMask;RechargeGasMaskFilter;RechargeRespiratorFilters
     }
 }

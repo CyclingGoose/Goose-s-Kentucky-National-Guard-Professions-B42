@@ -22,6 +22,7 @@ require "registries";
 -- all these tables serve to modularize the loadout functions, making it easier to add or remove specific setups without touching the main loadout function
 -- all of them are created outside of the main loadout function to avoid recreating them each time the function is called
 -- each table contains functions that correspond to specific setups defined in the profession configuration tables below
+
 local backpackSetups = {
     standard = function(inventory)
         AddToInventory:addStandardBackpackToInventory(inventory, backpack)
@@ -47,11 +48,28 @@ local webbingSetups = {
 }
 
 local satchelSetups = {
-    standard = function(inventory)
+    vanilla = function(inventory)
         AddToInventory:addStandardSatchelToInventory(inventory, satchel)
     end,
+
+    vanilla_scro = function (inventory)
+        AddToInventory:addSCROSatchelToInventory(inventory, satchel)
+    end,
+
+    vanilla_cbrn = function (inventory)
+        AddToInventory:addCBRNSatchelToInventory(inventory, satchel)
+    end,
+
     alice = function(inventory)
         AddToInventory:addABSatchelToInventory(inventory, satchel)
+    end,
+
+    alice_scro = function(inventory)
+        AddToInventory:addABSCROSatchelToInventory(inventory, satchel)
+    end,
+
+    alice_cbrn = function(inventory)
+        AddToInventory:addABCBRNSatchelToInventory(inventory, satchel)
     end,
 }
 
@@ -64,6 +82,10 @@ local chestrigSetups = {
 local weaponSetups = {
     standard = function(inventory)
         AddToInventory:addStandardWeaponsToInventory(inventory)
+    end,
+
+    light = function(inventory)
+        AddToInventory:addLightWeaponsToInventory(inventory)
     end,
 }
 
@@ -79,7 +101,7 @@ local gearSetups = {
     end,
     alice = function(inventory, playername)
         AddToInventory:addABGearToInventory(inventory, playername)
-        AddToInventory:addABMaskPouchToInventory(inventory, maskpouch)
+        AddToInventory:addABMaskPouchToInventory(inventory, maskpouch, player)
     end,
 }
 
@@ -121,16 +143,31 @@ local professionConfigAB = {
         weapons = "standard",
         ifak = true,
         webbing = "alice",
-        extraHelmet = true,
     },
     motortransportoperator = {
         gear = "alice",
         backpack = "standard",
-        weapons = "standard",
+        weapons = "light",
         ifak = true,
         toolbox = "standard",
         webbing = "alice",
         extraHelmet = true,
+    },
+
+    singlechannelradiooperator = {
+        gear = "alice",
+        satchel = "alice_scro",
+        weapons = "standard",
+        ifak = true,
+        webbing = "alice",
+    },
+
+    cbrnspecialist = {
+        gear = "alice",
+        satchel = "alice_cbrn",
+        weapons = "light",
+        ifak = true,
+        webbing = "alice",
     },
 }
 
@@ -146,7 +183,7 @@ local professionConfigVanilla = {
         gear = "standard",
         backpack = "traumabag",
         weapons = "standard",
-        satchel = "standard",
+        satchel = "vanilla",
         ifak = true,
         chestrig = "standard",
     },
@@ -163,16 +200,30 @@ local professionConfigVanilla = {
         weapons = "standard",
         ifak = true,
         chestrig = "standard",
-        extraHelmet = true,
     },
     motortransportoperator = {
         gear = "standard",
         backpack = "standard",
-        weapons = "standard",
+        weapons = "light",
         ifak = true,
         toolbox = "standard",
         webbing = "standard",
         extraHelmet = true,
+    },
+
+    singlechannelradiooperator = {
+        gear = "standard",
+        satchel = "vanilla_scro",
+        weapons = "standard",
+        ifak = true,
+        webbing = "standard",
+    },
+
+    cbrnspecialist = {
+        gear = "standard",
+        satchel = "vanilla_cbrn",
+        weapons = "light",
+        ifak = true,
     },
 }
 
@@ -190,7 +241,7 @@ local professionDictionary = {
 
     infantryman = {
         -- essentially their "special" item, just gets added to the inventory
-        inventory = {"Base.Screwdriver"},
+        inventory = {"Base.x2Scope", "Base.Screwdriver"},
 
         -- what they will wear once they spawn
         -- it does add it to the inventory first, then equips it
@@ -230,7 +281,7 @@ local professionDictionary = {
 
     combatengineer= {
                 
-        inventory = {"Base.Axe"}, -- Fire Axe
+        inventory = {"Base.HandAxe"}, -- Hatchet
 
         equip = {"Base.Vest_BulletArmy",
             "Base.Trousers_CamoGreen",
@@ -254,8 +305,7 @@ local professionDictionary = {
         equip = {"Base.Vest_BulletArmy",
             "Base.Trousers_CamoGreen",
             "Base.Jacket_ArmyCamoGreen",
-            "Base.Hat_BeretArmy",
-            "Base.Hat_GasMask",
+            "Base.Hat_Army",
             "Base.Tshirt_OliveDrab",
             "Base.Shoes_ArmyBoots",
             "Base.Gloves_FingerlessLeatherGloves_Black",
@@ -283,6 +333,47 @@ local professionDictionary = {
             "Base.Vest_DefaultTEXTURE"},
     },
 
+    singlechannelradiooperator = {
+
+        inventory = {"Base.Screwdriver"},
+
+        equip = {"Base.Vest_BulletArmy",
+            "Base.Trousers_CamoGreen",
+            "Base.Jacket_ArmyCamoGreen",
+            "Base.Hat_Army",
+            "Base.ManPackRadio",
+            "Base.Tshirt_OliveDrab",
+            "Base.Shoes_ArmyBoots",
+            "Base.Gloves_FingerlessLeatherGloves_Black",
+            "Base.WristWatch_Right_DigitalBlack",
+            "Base.Socks_Heavy",
+            "Base.Boxers_White",
+            "Base.HolsterSimple_Green",
+            "Base.Vest_DefaultTEXTURE",
+            "KNGP.NGEngineerArmband"},
+
+    },
+
+    cbrnspecialist = {
+
+        inventory = {"Base.CameraExpensive"},
+
+        equip = {"Base.Vest_BulletArmy",
+            "Base.Trousers_CamoGreen",
+            "Base.Jacket_ArmyCamoGreen",
+            "Base.Hat_Army",
+            "Base.Hat_GasMask",
+            "Base.Tshirt_OliveDrab",
+            "Base.Shoes_ArmyBoots",
+            "Base.Gloves_Surgical",
+            "Base.WristWatch_Right_DigitalBlack",
+            "Base.Socks_Heavy",
+            "Base.Boxers_White",
+            "Base.HolsterSimple_Green",
+            "Base.Vest_DefaultTEXTURE",
+            "KNGP.NGSupportArmband"},
+
+    },
 }
 
 -- function to add items to inventory based on profession configuration
@@ -313,7 +404,6 @@ local function kngpGearPlayer(_player)
         local player = _player
         local prof = player:getDescriptor():getCharacterProfession():getName(); -- gets the profession name of the player 
         local playername = player:getFullName() -- gets the player characters full name
-
         
         print("kentuckynationalguardprofessionsgoose - Loadout Activated: ", activate_loadouts);
         print("kentuckynationalguardprofessionsgoose - Profession Chosen: ", prof);

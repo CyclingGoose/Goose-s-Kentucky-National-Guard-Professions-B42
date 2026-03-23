@@ -28,3 +28,5 @@ KNGProfessions.CharacterProfession.KNG_CombatMedic = CharacterProfession.registe
 KNGProfessions.CharacterProfession.KNG_MilitaryPolice = CharacterProfession.register("kngprofessions:militarypolice")
 KNGProfessions.CharacterProfession.KNG_CombatEngineer = CharacterProfession.register("kngprofessions:combatengineer")
 KNGProfessions.CharacterProfession.KNG_MotorTransportOperator = CharacterProfession.register("kngprofessions:motortransportoperator")
+KNGProfessions.CharacterProfession.KNG_SingleChannelRadioOperator = CharacterProfession.register("kngprofessions:singlechannelradiooperator")
+KNGProfessions.CharacterProfession.KNG_CBRNSpecialist = CharacterProfession.register("kngprofessions:cbrnspecialist")

@@ -1,9 +1,12 @@
 [h1][b]Goose's Kentucky National Guard Professions[/b][/h1]
 [i][b]Authentic 1993 KYNG professions, loadouts, and equipment for the Knox Exclusion Zone.[/b][/i]
 
-[b]This mod adds five historically grounded professions drawn from the units and equipment the Kentucky National Guard would realistically have deployed during the 1993 Knox Exclusion Zone operation. Each profession comes with a profession-appropriate loadout with realistic ammo counts, rations and field equipment that are designed to be balanced, immersive and true to the era. If you want your playthrough to actually feel like you survived the first hours of the apocalypse as a member of the military, this is where you start.[/b]
+[b]This mod adds seven historically grounded professions drawn from the units and equipment the Kentucky National Guard would realistically have deployed during the 1993 Knox Exclusion Zone operation. Each profession comes with a profession-appropriate loadout with realistic ammo counts, rations and field equipment that are designed to be balanced, immersive and true to the era. If you want your playthrough to actually feel like you survived the first hours of the apocalypse as a member of the military, this is where you start.[/b]
 
 [h2][b]Professions[/b][/h2]
+[b]CBRN Specialist (MOS 74D, -12 Points)[/b]
+Chemical, biological, radiological and nuclear specialist from the 41st Civil Support Team.
+
 [b]Combat Engineer (MOS 12B, -18 Points)[/b]
 Field engineer from the 201st Engineer Battalion trained in demolitions and obstacle clearance. Equipped for breaching, fortification and improvised munitions.
 
@@ -11,22 +14,27 @@ Field engineer from the 201st Engineer Battalion trained in demolitions and obst
 Medical specialist from the 917th Medical Company of the 201st Engineer Battalion. Carries a full trauma kit and field pharmaceuticals enough to give field care and sustain a squad of four.
 
 [b]Infantryman (MOS 11B, -12 Points)[/b]
-Standard light infantryman. Carries a full combat load with appropriate rations, protective equipment and issued ammunition.
+Standard light infantryman from the 1st Battalion, 149th Infantry Regiment. Carries a full combat load with appropriate rations, protective equipment and standard issue weapons.
 
 [b]Military Police (MOS 95B, -14 Points)[/b]
-Perimeter security and law enforcement specialist. Equipped for checkpoint duty and civil control operations within the KEZ.
+Perimeter security and law enforcement specialist from the 223rd Military Police Battalion. Equipped for checkpoint duty and civil control operations within the KEZ.
 
-[b]Motor Transport Operator (MOS 88M, -14 Points)[/b]
-Logistics driver and vehicle operator. Keeps convoys moving and knows how to get an engine running without a key.
+[b]Motor Transport Operator (MOS 88M, -12 Points)[/b]
+Logistics driver and vehicle operator from the 2123rd Transportation Company. Keeps convoys moving and knows how to get an engine running without a key.
+
+[b]Single Channel Radio Operator (MOS 31C, -14 Points)[/b]
+Radio operator assigned to the 201st Engineer Battalion. Carries a Manpack radio for frontline communication.
 
 [i][b]NOTE: MOS designations reflect 1993 U.S. Army classifications. Some are outdated by modern standards, this is intentional for period accuracy.[/b][/i]
+[i][b]NOTE: The only units where I wasn't able to 100% confirm their status in 1993 is the 223rd Military Police Battalion and the 41st Civil Support Team, however they are part of the KYNG currently.[/b][/i]
 
 [h2][b]Features[/b][/h2]
 [list]
 [*]Each profession awards a unique, era-accurate [b]loadout[/b] on spawn with realistic ammo counts, rations, gas masks, and field gear where applicable. Loadouts can be toggled in Sandbox Settings (enabled by default).
 [*]Loadouts are designed to be balanced and not overpowered, let me know of any balancing suggestions.
 [*]Equipment reflects what KYNG units would actually have been issued during a 1993 containment deployment.
-[*]This mod adds a medic and engineer armband, MP brassard and a military id card as items (not spawning as loot).
+[*]This mod adds several unit identifiers and a military id card as items (not spawning as loot, yet).
+[*]Flavour text included for those who appreciate it, more lore to come :)
 [/list]
 
 [h2][b]Compatibility[/b][/h2]

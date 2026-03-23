@@ -24,6 +24,10 @@
         <guid>d20b2684-dc6b-455a-b87d-b72878b37d96</guid>
     </files>
 
+	<files>
+        <path>media/clothing/clothingItems/NGSupportArmband.xml</path>
+        <guid>35e89208-c545-4e1d-9166-a134380b33f5</guid>
+    </files>
 <!-- Vests -->
 
 	<files>

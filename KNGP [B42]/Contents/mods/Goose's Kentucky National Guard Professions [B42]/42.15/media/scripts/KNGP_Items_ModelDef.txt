@@ -60,4 +60,10 @@ module Base {
         scale = 1,
     }	
 
+    model NGSupportArmbandGround
+    {
+        mesh = WorldItems/Clothing/NGSupportArmbandGround,
+        texture = clothes/NGSupportArmband,
+        scale = 1,
+    }
 }
