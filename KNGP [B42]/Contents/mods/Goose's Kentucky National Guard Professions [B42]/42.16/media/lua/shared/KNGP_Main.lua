@@ -13,7 +13,7 @@
 --
 -- code commented by CyclingGoose for clarity and personal reference.
 --
--- KNGP_Profession_Items.lua
+-- KNGP_Main.lua
 
 require "KNGP_Data";
 require "Items_AddToContainer";

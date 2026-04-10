@@ -13,13 +13,14 @@
 --
 -- code commented by CyclingGoose for clarity and personal reference.
 --
--- Items_AddToContainer.lua
+-- KNGP_AddToContainer.lua
 
 -- serves as a utils class
 
 --
 -- VANILLA ITEMS ONLY
 --
+
 function AddToContainer:addStandardRationsToContainer(inventory, container)
     for x=1, 5 do
         container:getItemContainer():AddItem("Base.Crackers");
@@ -33,7 +34,8 @@ function AddToContainer:addStandardRationsToContainer(inventory, container)
 
     container:getItemContainer():AddItem("Base.Teabag2");
     container:getItemContainer():AddItem("Base.Chocolate");
-    container:getItemContainer():AddItem("CandyFruitSlices");
+    container:getItemContainer():AddItem("Base.CandyFruitSlices");
+    container:getItemContainer():AddItem("Base.Spork");
 end
 
 function AddToContainer:addStandardInventoryGearToContainer(inventory, container, playername)
@@ -56,10 +58,20 @@ function AddToContainer:addStandardMilitaryPoliceGearToContainer(inventory, cont
     end
 end
 
+-- TODO: Implement it so that the gasmask is not added to the cbrn specialist's loadout since they already spawn with one equipped
+-- this will likely require passing the player object to this function so it can check the player's profession before adding the gasmask
+-- but atm I'm not sure how to do that without breaking the modularity of the container population functions
+-- so for now I'll just add the extra gasmask to the cbrn specialist's loadout and worry about it later
+function AddToContainer:addGasmaskToContainer(inventory, container)
+        container:getItemContainer():AddItem("Base.Hat_GasMask");
+        container:getItemContainer():AddItem("Base.GasmaskFilter");
+end
+
 function AddToContainer:addStandardGearToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.CompassDirectional");
-    container:getItemContainer():AddItem("Base.Hat_GasMask");
-    container:getItemContainer():AddItem("Base.GasmaskFilter");
+    if not getActivatedMods():contains("AliceGear") then
+        AddToContainer:addGasmaskToContainer(inventory, container);
+    end
 end
 
 function AddToContainer:addToolsToContainer(inventory, container)
@@ -103,7 +115,7 @@ function AddToContainer:addAdvancedFirstAidToContainer(inventory, container)
         container:getItemContainer():AddItem("Base.Gloves_Surgical");
         container:getItemContainer():AddItem("Base.ComfreyCataplasm"); -- Cataplasm = Poultice
         container:getItemContainer():AddItem("Base.PlantainCataplasm"); -- Cataplasm = Poultice
-        container:getItemContainer():AddItem("WildGarlicCataplasm"); -- Cataplasm = Poultice
+        container:getItemContainer():AddItem("Base.WildGarlicCataplasm"); -- Cataplasm = Poultice
         container:getItemContainer():AddItem("Base.Splint");
     end
 
@@ -112,18 +124,35 @@ function AddToContainer:addAdvancedFirstAidToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.Tweezers");
 end
 
-function AddToContainer:addMechanicToolsToContainer(inventory, container)
-    -- TODO: Reserved for future mechanic-specific tool loadouts
+function AddToContainer:addCBRNItemsToContainer(inventory, container)
+    local activate_loreitems = SandboxVars.KNGP.Lore;
+    container:getItemContainer():AddItem("Base.Pen");
+    if activate_loreitems then
+    local journal = container:getItemContainer():AddItem("Base.Journal");
+    LoreFunctions:writeLoreInJournal("cbrn", journal);
+    container:getItemContainer():AddItem("Base.SuspiciousPackage"):setName("Package 41CST-001");
+    end
+
+    for x = 1, 2 do
+    container:getItemContainer():AddItem("Base.WaterPurificationTablets");
+    container:getItemContainer():AddItem("Base.WaterRationCan");
+    end
+    
+    container:getItemContainer():AddItem("Base.HazmatSuit");
+    container:getItemContainer():AddItem("Base.InsectRepellent");
+
 end
 
-function AddToContainer:addStandardMagazinesToContainer(inventory, container)
-    for x=1,5 do
-        container:getItemContainer():AddItem("Base.556Clip"):setCurrentAmmoCount(30);
+function AddToContainer:addSCROItemsToContainer(inventory, container)
+    container:getItemContainer():AddItem("Base.Pen");
+    container:getItemContainer():AddItem("Base.GraphPaper"):setName("KEZ Radio Frequencies's");
+    
+    for x = 1, 3 do
+    container:getItemContainer():AddItem("Base.Battery");
     end
 
-    for x=1, 2 do
-        container:getItemContainer():AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
-    end
+    container:getItemContainer():AddItem("Base.Flashlight_AngleHead_Army");
+    container:getItemContainer():AddItem("Base.Headphones");
 end
 --
 -- VANILLA ITEMS ONLY
@@ -148,6 +177,7 @@ function AddToContainer:addABRationsToContainer(inventory, container)
     container:getItemContainer():AddItem("Base.Teabag2");
     container:getItemContainer():AddItem("Base.Chocolate");
     container:getItemContainer():AddItem("CandyFruitSlices");
+    container:getItemContainer():AddItem("Base.Spork");
 end
 
 --

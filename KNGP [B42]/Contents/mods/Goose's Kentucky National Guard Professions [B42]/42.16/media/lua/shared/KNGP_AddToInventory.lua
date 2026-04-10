@@ -13,7 +13,7 @@
 --
 -- code commented by CyclingGoose for clarity and personal reference.
 --
--- Items_AddToInventory.lua
+-- KNGP_AddToInventory.lua
 
 -- serves as a utils class
 

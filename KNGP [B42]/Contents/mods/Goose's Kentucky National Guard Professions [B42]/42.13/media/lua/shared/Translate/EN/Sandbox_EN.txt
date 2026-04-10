@@ -1,8 +1,0 @@
-Sandbox_EN = {
-    
-    Sandbox_KNGP = "Kentucky National Guard Professions",
-
-    Sandbox_KNGP_Loadouts = "Activate Military Loadouts",
-    Sandbox_KNGP_Loadouts_tooltip = "Uncheck If You Don't Want To Start With Profession Gear",
-
-}

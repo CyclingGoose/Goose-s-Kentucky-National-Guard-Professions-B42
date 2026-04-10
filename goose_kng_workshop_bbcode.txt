@@ -4,25 +4,25 @@
 [b]This mod adds seven historically grounded professions drawn from the units and equipment the Kentucky National Guard would realistically have deployed during the 1993 Knox Exclusion Zone operation. Each profession comes with a profession-appropriate loadout with realistic ammo counts, rations and field equipment that are designed to be balanced, immersive and true to the era. If you want your playthrough to actually feel like you survived the first hours of the apocalypse as a member of the military, this is where you start.[/b]
 
 [h2][b]Professions[/b][/h2]
-[b]CBRN Specialist (MOS 74D, -12 Points)[/b]
+[b]CBRN Specialist (MOS 74D, -10 Points)[/b]
 Chemical, biological, radiological and nuclear specialist from the 41st Civil Support Team.
 
-[b]Combat Engineer (MOS 12B, -18 Points)[/b]
+[b]Combat Engineer (MOS 12B, -16 Points)[/b]
 Field engineer from the 201st Engineer Battalion trained in demolitions and obstacle clearance. Equipped for breaching, fortification and improvised munitions.
 
-[b]Combat Medic (MOS 91B, -14 Points)[/b]
+[b]Combat Medic (MOS 91B, -12 Points)[/b]
 Medical specialist from the 917th Medical Company of the 201st Engineer Battalion. Carries a full trauma kit and field pharmaceuticals enough to give field care and sustain a squad of four.
 
-[b]Infantryman (MOS 11B, -12 Points)[/b]
+[b]Infantryman (MOS 11B, -10 Points)[/b]
 Standard light infantryman from the 1st Battalion, 149th Infantry Regiment. Carries a full combat load with appropriate rations, protective equipment and standard issue weapons.
 
-[b]Military Police (MOS 95B, -14 Points)[/b]
+[b]Military Police (MOS 95B, -12 Points)[/b]
 Perimeter security and law enforcement specialist from the 223rd Military Police Battalion. Equipped for checkpoint duty and civil control operations within the KEZ.
 
-[b]Motor Transport Operator (MOS 88M, -12 Points)[/b]
+[b]Motor Transport Operator (MOS 88M, -10 Points)[/b]
 Logistics driver and vehicle operator from the 2123rd Transportation Company. Keeps convoys moving and knows how to get an engine running without a key.
 
-[b]Single Channel Radio Operator (MOS 31C, -14 Points)[/b]
+[b]Single Channel Radio Operator (MOS 31C, -12 Points)[/b]
 Radio operator assigned to the 201st Engineer Battalion. Carries a Manpack radio for frontline communication.
 
 [i][b]NOTE: MOS designations reflect 1993 U.S. Army classifications. Some are outdated by modern standards, this is intentional for period accuracy.[/b][/i]
@@ -39,8 +39,7 @@ Radio operator assigned to the 201st Engineer Battalion. Carries a Manpack radio
 
 [h2][b]Compatibility[/b][/h2]
 [list]
-[*][b]Minimum version:[/b] Build 42.13.0 and above
-[*][b]Sandbox Settings:[/b] Enable Loadout (enabled by default)
+[*][b]Sandbox Settings to enable loadout and lore items
 [*][b] Multiplayer compatible[/b]
 [*][b] Can be added to already existing saves, but not removed from them[/b]
 [/list]

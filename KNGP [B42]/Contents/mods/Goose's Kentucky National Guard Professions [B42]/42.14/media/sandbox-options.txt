@@ -1,9 +1,0 @@
-VERSION = 1,
-
-option KNGP.Loadouts {
-    type = boolean,
-    default = true,
-    page = KNGP,
-    translation =  KNGP_Loadouts,
-    description =   KNGP_Loadouts,
-}
