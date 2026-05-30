@@ -22,8 +22,10 @@ function GeneralFunctions:randomNumberTableIndex(table)
     return ZombRand(tablelength)+1;
 end
 
-function GeneralFunctions:randomNumber(digitnumber)
-    return ZombRand(digitnumber)+1;
+
+
+function GeneralFunctions:randomNumber(range)
+    return ZombRand(range)+1;
 end
 
 function GeneralFunctions:getPhotographByTypeInventory(type, inventory)

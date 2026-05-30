@@ -292,6 +292,7 @@ professionConfigVanilla = {
         satchel = "vanilla_cbrn",
         weapons = "light",
         ifak = true,
+        webbing = "standard",
     },
 }
 
