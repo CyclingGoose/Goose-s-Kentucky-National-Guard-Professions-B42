@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>Skinned\Clothes\Armband</m_MaleModel>
+	<m_FemaleModel>Skinned\Clothes\Armband</m_FemaleModel>
+	<m_GUID>52178719-cf0b-4f66-a606-bbbe8b8085f0</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>clothes\NGMedicArmband</textureChoices>
+</clothingItem>

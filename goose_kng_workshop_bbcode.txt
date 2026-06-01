@@ -5,7 +5,7 @@
 
 [h2][b]Professions[/b][/h2]
 [b]CBRN Specialist (MOS 74D, -10 Points)[/b]
-Chemical, biological, radiological and nuclear specialist from the 41st Civil Support Team.
+Chemical, biological, radiological and nuclear specialist from the 103rd Chemical Battalion.
 
 [b]Combat Engineer (MOS 12B, -16 Points)[/b]
 Field engineer from the 201st Engineer Battalion trained in demolitions and obstacle clearance. Equipped for breaching, fortification and improvised munitions.
@@ -17,7 +17,7 @@ Medical specialist from the 917th Medical Company of the 201st Engineer Battalio
 Standard light infantryman from the 1st Battalion, 149th Infantry Regiment. Carries a full combat load with appropriate rations, protective equipment and standard issue weapons.
 
 [b]Military Police (MOS 95B, -12 Points)[/b]
-Perimeter security and law enforcement specialist from the 223rd Military Police Battalion. Equipped for checkpoint duty and civil control operations within the KEZ.
+Perimeter security and law enforcement specialist from the 198th Military Police Battalion. Equipped for checkpoint duty and civil control operations within the KEZ.
 
 [b]Motor Transport Operator (MOS 88M, -10 Points)[/b]
 Logistics driver and vehicle operator from the 2123rd Transportation Company. Keeps convoys moving and knows how to get an engine running without a key.
@@ -26,7 +26,6 @@ Logistics driver and vehicle operator from the 2123rd Transportation Company. Ke
 Radio operator assigned to the 201st Engineer Battalion. Carries a Manpack radio for frontline communication.
 
 [i][b]NOTE: MOS designations reflect 1993 U.S. Army classifications. Some are outdated by modern standards, this is intentional for period accuracy.[/b][/i]
-[i][b]NOTE: The only units where I wasn't able to 100% confirm their status in 1993 is the 223rd Military Police Battalion and the 41st Civil Support Team, however they are part of the KYNG currently.[/b][/i]
 
 [h2][b]Features[/b][/h2]
 [list]
