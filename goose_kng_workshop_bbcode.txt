@@ -39,7 +39,7 @@ Radio operator assigned to the 201st Engineer Battalion. Carries a Manpack radio
 [h2][b]Compatibility[/b][/h2]
 [list]
 [*][b]Sandbox Settings to enable loadout and lore items
-[*][b] Multiplayer compatible[/b]
+[*][b] NOT Multiplayer compatible yet[/b]
 [*][b] Can be added to already existing saves, but not removed from them[/b]
 [/list]
 

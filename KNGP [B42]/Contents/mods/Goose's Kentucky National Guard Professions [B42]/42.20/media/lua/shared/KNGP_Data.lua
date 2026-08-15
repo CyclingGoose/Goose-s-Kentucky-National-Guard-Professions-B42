@@ -148,8 +148,8 @@ knoxEventPhotographNames = {
 -- setup functions for different gear configurations
 --
 backpackSetups = {
-    standard = function(inventory)
-        AddToInventory:addStandardBackpackToInventory(inventory, backpack)
+    standard = function(inventory, prof)
+        AddToInventory:addStandardBackpackToInventory(inventory, backpack, prof)
     end,
     engineer = function(inventory)
         AddToInventory:addCombatEngineerBackpackToInventory(inventory, backpack)
@@ -163,11 +163,8 @@ backpackSetups = {
 }
 
 webbingSetups = {
-    standard = function(inventory)
-        AddToInventory:addStandardWebbingToInventory(inventory, webbing)
-    end,
-    alice = function(inventory)
-        AddToInventory:addABWebbingToInventory(inventory, webbing)
+    alice = function(inventory, prof)
+        AddToInventory:addABWebbingToInventory(inventory, webbing, prof)
     end,
 }
 
@@ -181,7 +178,6 @@ satchelSetups = {
     end,
 
     vanilla_cbrn = function (inventory)
-        local activate_loreitems = SandboxVars.KNGP.Lore;
         AddToInventory:addCBRNSatchelToInventory(inventory, satchel)
     end,
 
@@ -194,24 +190,20 @@ satchelSetups = {
     end,
 
     alice_cbrn = function(inventory)
-        local activate_loreitems = SandboxVars.KNGP.Lore;
         AddToInventory:addABCBRNSatchelToInventory(inventory, satchel)
     end,
 }
 
 chestrigSetups = {
-    standard = function(inventory)
-        AddToInventory:addStandardChestrigToInventory(inventory, chestrig)
+    standard = function(inventory, prof)
+        AddToInventory:addStandardChestrigToInventory(inventory, chestrig, prof)
     end,
 }
 
 weaponSetups = {
-    standard = function(inventory)
-        AddToInventory:addStandardWeaponsToInventory(inventory)
-    end,
-
-    light = function(inventory)
-        AddToInventory:addLightWeaponsToInventory(inventory)
+    standard = function(inventory, prof)
+        AddToInventory:addStandardAssaultRifleToInventory(inventory, prof)
+        AddToInventory:addStandardPistolToInventory(inventory, prof)
     end,
 }
 
@@ -222,13 +214,11 @@ toolboxSetups = {
 }
 
 gearSetups = {
-    standard = function(inventory, playername)
-        local activate_loreitems = SandboxVars.KNGP.Lore;
-        AddToInventory:addStandardGearToInventory(inventory, playername)
+    standard = function(inventory, playername, prof)
+        AddToInventory:addStandardGearToInventory(inventory, playername, prof)
     end,
-    alice = function(inventory, playername)
-        local activate_loreitems = SandboxVars.KNGP.Lore;
-        AddToInventory:addABGearToInventory(inventory, playername)
+    alice = function(inventory, playername, prof)
+        AddToInventory:addABGearToInventory(inventory, playername, prof)
         AddToInventory:addABMaskPouchToInventory(inventory, maskpouch)
     end,
 }
@@ -272,10 +262,10 @@ professionConfigVanilla = {
     motortransportoperator = {
         gear = "standard",
         backpack = "standard",
-        weapons = "light",
+        weapons = "standard",
         ifak = true,
         toolbox = "standard",
-        webbing = "standard",
+        chestrig = "standard",
         extraHelmet = true,
     },
 
@@ -284,15 +274,15 @@ professionConfigVanilla = {
         satchel = "vanilla_scro",
         weapons = "standard",
         ifak = true,
-        webbing = "standard",
+        chestrig = "standard",
     },
 
     cbrnspecialist = {
         gear = "standard",
         satchel = "vanilla_cbrn",
-        weapons = "light",
+        weapons = "standard",
         ifak = true,
-        webbing = "standard",
+        chestrig = "standard",
     },
 }
 
@@ -330,7 +320,7 @@ professionConfigAB = {
     motortransportoperator = {
         gear = "alice",
         backpack = "standard",
-        weapons = "light",
+        weapons = "standard",
         ifak = true,
         toolbox = "standard",
         webbing = "alice",
@@ -348,7 +338,7 @@ professionConfigAB = {
     cbrnspecialist = {
         gear = "alice",
         satchel = "alice_cbrn",
-        weapons = "light",
+        weapons = "standard",
         ifak = true,
         webbing = "alice",
     },

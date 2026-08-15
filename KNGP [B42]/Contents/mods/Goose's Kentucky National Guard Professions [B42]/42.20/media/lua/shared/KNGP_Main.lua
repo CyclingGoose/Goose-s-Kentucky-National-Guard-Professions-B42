@@ -39,15 +39,35 @@ local function loadoutByConfig(inventory, playername, prof)
     -- looks more complex than it is, but cleaner than a bunch of if-else statements
     -- we need two checks here: one to see what gear is defined in the config, and another to see if that gear setup exists in the gearSetups table
     -- then the specific gear setup function is called, with the inventory and playername as parameters
-    if config.gear and gearSetups[config.gear] then gearSetups[config.gear](inventory, playername) end
-    if config.backpack and backpackSetups[config.backpack] then backpackSetups[config.backpack](inventory) end
-    if config.weapons and weaponSetups[config.weapons] then weaponSetups[config.weapons](inventory) end
-    if config.ifak then AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit) end
-    if config.chestrig then chestrigSetups[config.chestrig](inventory) end
-    if config.toolbox then toolboxSetups[config.toolbox](inventory) end
-    if config.satchel then satchelSetups[config.satchel](inventory) end
-    if config.webbing then webbingSetups[config.webbing](inventory) end
-    if config.extraHelmet then inventory:AddItem("Base.Hat_Army") end
+    if config.gear and gearSetups[config.gear] then
+        gearSetups[config.gear](inventory, playername, prof)
+    end
+    if config.backpack and backpackSetups[config.backpack] then
+        backpackSetups[config.backpack](inventory, prof)
+    end
+    if config.weapons and weaponSetups[config.weapons] then
+        weaponSetups[config.weapons](inventory, prof)
+    end
+    if config.ifak then
+        AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit, prof)
+    end
+    if config.chestrig and chestrigSetups[config.chestrig] then
+        chestrigSetups[config.chestrig](inventory, prof)
+    end
+    if config.toolbox and toolboxSetups[config.toolbox] then
+        toolboxSetups[config.toolbox](inventory, prof)
+    end
+    if config.satchel and satchelSetups[config.satchel] then
+        satchelSetups[config.satchel](inventory, prof)
+    end
+    if config.webbing and webbingSetups[config.webbing] then
+        webbingSetups[config.webbing](inventory, prof)
+    end
+    if config.extraHelmet then
+        if SandboxVars.KNGPMotorTransportOperator.MotorTransportExtraHelmet then
+            inventory:AddItem("Base.Hat_Army");
+        end
+    end
 end
 
 local function kngpGearPlayer(_player)

@@ -35,125 +35,138 @@ function AddToInventory:addKnoxEventPhotographToInventory(inventory)
     else end
 end
 
-function AddToInventory:addStandardWebbingToInventory(inventory, webbing)
-    webbing = inventory:AddItem("Base.Bag_ALICE_BeltSus_Camo");
-end
+function AddToInventory:addStandardGearToInventory(inventory, playername, prof)
+    local activate_miscgear = GeneralFunctions:getSandboxVarByProfessionMiscGear(prof);
+    if activate_miscgear then
+        inventory:AddItem("Base.KnifePocket");
+        inventory:AddItem("Base.Necklace_DogTag"):setName("Dog Tags: " .. playername);
+        inventory:AddItem("KNGP.MilitaryIDCard"):setName("Military ID Card: " .. playername);
+        inventory:AddItem("Base.EntrenchingTool");
+        for x=1, 2 do 
+            inventory:AddItem("Base.WaterBottle");
+        end
 
-function AddToInventory:addStandardGearToInventory(inventory, playername)
-    local activate_loreitems = SandboxVars.KNGP.Lore;
-    inventory:AddItem("Base.KnifePocket");
-    inventory:AddItem("Base.Necklace_DogTag"):setName("Dog Tags: " .. playername);
-    inventory:AddItem("KNGP.MilitaryIDCard"):setName("Military ID Card: " .. playername);
-    inventory:AddItem("Base.EntrenchingTool");
-    for x=1, 2 do 
-        inventory:AddItem("Base.WaterBottle");
+        for x=1, 2 do
+            AddToInventory:addKnoxEventPhotographToInventory(inventory);
+        end
+
+        AddToInventory:addNormalPhotographToInventory(inventory);
     end
-
-    for x=1, 2 do
-        AddToInventory:addKnoxEventPhotographToInventory(inventory);
-    end
-
-    AddToInventory:addNormalPhotographToInventory(inventory);
 end
 
 function AddToInventory:addToolboxToInventory(inventory, toolbox)
-    toolbox = inventory:AddItem("Base.Toolbox_Mechanic");
-    AddToContainer:addToolsToContainer(inventory, toolbox);
+        local activate_toolbox = SandboxVars.KNGPMotorTransportOperator.MotorTransportToolbox;
+        if activate_toolbox then
+        toolbox = inventory:AddItem("Base.Toolbox_Mechanic");
+        AddToContainer:addToolsToContainer(inventory, toolbox);
+        end
 end
 
 function AddToInventory:addMilitaryPoliceBackpackToInventory(inventory, backpack)
-    backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
-    AddToContainer:addStandardRationsToContainer(inventory, backpack);
-    AddToContainer:addStandardGearToContainer(inventory, backpack);
-    AddToContainer:addStandardMilitaryPoliceGearToContainer(inventory, backpack);
+        local activate_militarypolicebackpack = SandboxVars.KNGPMilitaryPolice.MilitaryPoliceBackpack;
+        if activate_militarypolicebackpack then
+        backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
+        AddToContainer:addStandardRationsToContainer(inventory, backpack);
+        AddToContainer:addStandardGearToContainer(inventory, backpack);
+        AddToContainer:addStandardMilitaryPoliceGearToContainer(inventory, backpack);
+        end
 end
 
 function AddToInventory:addCombatEngineerBackpackToInventory(inventory, backpack)
-    backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
-    AddToContainer:addStandardRationsToContainer(inventory, backpack);
-    AddToContainer:addStandardGearToContainer(inventory, backpack);
-    AddToContainer:addCombatEngineerGearToContainer(inventory, backpack);
+        local activate_combatengineerbackpack = SandboxVars.KNGPEngineer.EngineerBackpack;
+        if activate_combatengineerbackpack then
+        backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
+        AddToContainer:addStandardRationsToContainer(inventory, backpack);
+        AddToContainer:addStandardGearToContainer(inventory, backpack);
+        AddToContainer:addCombatEngineerGearToContainer(inventory, backpack);
+    end
 end
 
 function AddToInventory:addStandardBackpackToInventory(inventory, backpack)
-    -- note: the backpack parameter is reassigned here, this is intentional for container population
-    backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
-    AddToContainer:addStandardRationsToContainer(inventory, backpack);
-    AddToContainer:addStandardGearToContainer(inventory, backpack);
+        -- note: the backpack parameter is reassigned here, this is intentional for container population
+        backpack = inventory:AddItem("Base.Bag_ALICEpack_Army");
+        AddToContainer:addStandardRationsToContainer(inventory, backpack);
+        AddToContainer:addStandardGearToContainer(inventory, backpack);
 end
 
-function AddToInventory:addStandardChestrigToInventory(inventory, chestrig)
-    chestrig = inventory:AddItem("Base.Bag_ChestRig");
+function AddToInventory:addStandardChestrigToInventory(inventory, chestrig, prof)
+        local activate_webbing = GeneralFunctions:getSandboxVarByProfessionWebbing(prof);
+        if activate_webbing then
+        chestrig = inventory:AddItem("Base.Bag_ChestRig");
+        end
 end
 
 function AddToInventory:addStandardTraumaBagToInventory(inventory, traumabag)
-    traumabag = inventory:AddItem("Base.Bag_MedicalBag");
-    AddToContainer:addAdvancedFirstAidToContainer(inventory, traumabag);
-    traumabag:setName("Unit One Pack");
-end
-
-function AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit)
-    firstaidkit = inventory:AddItem("Base.FirstAidKit_Military");
-    AddToContainer:addStandardFirstAidToContainer(inventory, firstaidkit);
-end
-
-function AddToInventory:addStandardWeaponsToInventory(inventory)
-    inventory:AddItem("Base.AssaultRifle"); -- M16 Assault Rifle
-    inventory:AddItem("Base.Pistol"); -- M9 Pistol
-
-    for x = 1, 3 do
-    inventory:AddItem("Base.556Clip"):setCurrentAmmoCount(30);
-    end
-
-    for x = 1, 2 do
-       inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+    local activate_traumabag = SandboxVars.KNGPMedic.MedicTraumabag;
+    if activate_traumabag then
+        traumabag = inventory:AddItem("Base.Bag_MedicalBag");
+        AddToContainer:addAdvancedFirstAidToContainer(inventory, traumabag);
+        traumabag:setName("Unit One Pack");
     end
 end
 
-function AddToInventory:addLightWeaponsToInventory(inventory)
-    inventory:AddItem("Base.Pistol"); -- M9 Pistol
-    
-    for x = 1, 3 do
-       inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+function AddToInventory:addStandardIFAKToInventory(inventory, firstaidkit, prof)
+        local activate_ifak = GeneralFunctions:getSandboxVarByProfessionIFAK(prof);
+        if activate_ifak then
+        firstaidkit = inventory:AddItem("Base.FirstAidKit_Military");
+        AddToContainer:addStandardFirstAidToContainer(inventory, firstaidkit);
+        end
+end
+
+function AddToInventory:addStandardAssaultRifleToInventory(inventory, prof)
+    local activate_assaultrifle = GeneralFunctions:getSandboxVarByProfessionAssaultRifle(prof);
+    local amount_assaultriflemags = GeneralFunctions:getSandboxVarByProfessionAssaultRifleMags(prof);
+
+    if activate_assaultrifle then
+        inventory:AddItem("Base.AssaultRifle"); -- M16 Assault Rifle
+        if amount_assaultriflemags and amount_assaultriflemags > 0 then
+            for x = 1, amount_assaultriflemags do
+                inventory:AddItem("Base.556Clip"):setCurrentAmmoCount(30);
+            end
+        end
+    end
+end
+
+function AddToInventory:addStandardPistolToInventory(inventory, prof)
+    local activate_pistol = GeneralFunctions:getSandboxVarByProfessionPistol(prof);
+    local amount_pistolmags = GeneralFunctions:getSandboxVarByProfessionPistolMags(prof);
+    if activate_pistol then
+        inventory:AddItem("Base.Pistol"); -- M9 Pistol
+        if amount_pistolmags and amount_pistolmags > 0 then
+            for x = 1, amount_pistolmags do
+                inventory:AddItem("Base.9mmClip"):setCurrentAmmoCount(15);
+            end
+        end
     end
 end
 
 function AddToInventory:addStandardSatchelToInventory(inventory, satchel)
-    satchel = inventory:AddItem("Base.Bag_Satchel_Military");
-    AddToContainer:addStandardRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
+        local activate_medicsatchel = SandboxVars.KNGPMedic.MedicSatchel;
+        if activate_medicsatchel then
+        satchel = inventory:AddItem("Base.Bag_Satchel_Military");
+        AddToContainer:addStandardRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        end
 end
 
 function AddToInventory:addCBRNSatchelToInventory(inventory, satchel)
-    local activate_loreitems = SandboxVars.KNGP.Lore;
-    satchel = inventory:AddItem("Base.Bag_Satchel_Military");
-    AddToContainer:addStandardRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
-    AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+        local activate_cbrnsatchel = SandboxVars.KNGPCBRNSpecialist.CBRNSatchel;
+        if activate_cbrnsatchel then
+        satchel = inventory:AddItem("Base.Bag_Satchel_Military");
+        AddToContainer:addStandardRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+        end
 end
 
 function AddToInventory:addSCROSatchelToInventory(inventory, satchel)
-    satchel = inventory:AddItem("Base.Bag_Satchel_Military");
-    AddToContainer:addStandardRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
-    AddToContainer:addSCROItemsToContainer(inventory, satchel);
-end
-
-function AddToInventory:addStandardRationsToInventory(inventory)
-    for x=1, 5 do
-        inventory:AddItem("Base.Crackers");
-    end
-
-    for x=1, 2 do
-        inventory:AddItem("Base.GranolaBar");
-        inventory:AddItem("Base.CannedCornedBeef");
-        inventory:AddItem("Base.WaterBottle");
-        inventory:AddItem("Base.BreadSlices");
-    end
-             
-    inventory:AddItem("Base.TeaBag2");
-    inventory:AddItem("Base.Chocolate");
-    inventory:AddItem("CandyFruitSlices");
+        local activate_scrosatchel = SandboxVars.KNGPSingleChannelRadioOperator.SingleChannelRadioSatchel;
+        if activate_scrosatchel then
+        satchel = inventory:AddItem("Base.Bag_Satchel_Military");
+        AddToContainer:addStandardRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        AddToContainer:addSCROItemsToContainer(inventory, satchel);
+        end
 end
 --
 -- VANILLA ITEMS ONLY
@@ -163,25 +176,9 @@ end
 -- MOD FUNCTIONS: Alice Belts
 --
 
-function AddToInventory:addABRationsToInventory(inventory)
-    for x=1, 5 do
-        inventory:AddItem("Base.Crackers");
-    end
-
-    for x=1, 2 do
-        inventory:AddItem("Base.GranolaBar");
-        inventory:AddItem("Base.CannedCornedBeef");
-         -- removed water bottles from AB rations to reflect the use of canteens
-        inventory:AddItem("Base.BreadSlices");
-    end
-             
-    inventory:AddItem("Base.Teabag2");
-    inventory:AddItem("Base.Chocolate");
-    inventory:AddItem("CandyFruitSlices");
-end
-
-function AddToInventory:addABGearToInventory(inventory, playername)
-    local activate_loreitems = SandboxVars.KNGP.Lore;
+function AddToInventory:addABGearToInventory(inventory, playername, prof)
+    local activate_miscgear = GeneralFunctions:getSandboxVarByProfessionMiscGear(prof);
+    if activate_miscgear then
     inventory:AddItem("ALICE.M9Bayonet");
     inventory:AddItem("ALICE.M9BayonetSheath");
     inventory:AddItem("ALICE.AliceCanteen")
@@ -194,31 +191,43 @@ function AddToInventory:addABGearToInventory(inventory, playername)
     end
 
     AddToInventory:addNormalPhotographToInventory(inventory);
+    end
 end
 
-function AddToInventory:addABWebbingToInventory(inventory, webbing)
-    webbing = inventory:AddItem("ALICE.AliceVest4P1C1ETight");
+function AddToInventory:addABWebbingToInventory(inventory, webbing, prof)
+        local activate_webbing = GeneralFunctions:getSandboxVarByProfessionWebbing(prof);
+        if activate_webbing then
+        webbing = inventory:AddItem("ALICE.AliceVest4P1C1ETight");
+        end
 end
 
 function AddToInventory:addABSatchelToInventory(inventory, satchel)
-    satchel = inventory:AddItem("ALICE.AliceFieldpack");
-    AddToContainer:addABRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
+        local activate_satchel = SandboxVars.KNGPMedic.MedicSatchel;
+        if activate_satchel then
+        satchel = inventory:AddItem("ALICE.AliceFieldpack");
+        AddToContainer:addABRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        end
 end
 
 function AddToInventory:addABCBRNSatchelToInventory(inventory, satchel)
-    local activate_loreitems = SandboxVars.KNGP.Lore;
-    satchel = inventory:AddItem("ALICE.AliceFieldpack");
-    AddToContainer:addABRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
-    AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+        local activate_cbrn_satchel = SandboxVars.KNGPCBRNSpecialist.CBRNSatchel;
+        if activate_cbrn_satchel then
+        satchel = inventory:AddItem("ALICE.AliceFieldpack");
+        AddToContainer:addABRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        AddToContainer:addCBRNItemsToContainer(inventory, satchel);
+        end
 end
 
 function AddToInventory:addABSCROSatchelToInventory(inventory, satchel)
-    satchel = inventory:AddItem("ALICE.AliceFieldpack");
-    AddToContainer:addABRationsToContainer(inventory, satchel);
-    AddToContainer:addStandardGearToContainer(inventory, satchel);
-    AddToContainer:addSCROItemsToContainer(inventory, satchel);
+        local activate_scro_satchel = SandboxVars.KNGPSingleChannelRadioOperator.SingleChannelRadioSatchel
+        if activate_scro_satchel then
+        satchel = inventory:AddItem("ALICE.AliceFieldpack");
+        AddToContainer:addABRationsToContainer(inventory, satchel);
+        AddToContainer:addStandardGearToContainer(inventory, satchel);
+        AddToContainer:addSCROItemsToContainer(inventory, satchel);
+        end
 end
 
 function AddToInventory:addABMaskPouchToInventory(inventory, maskpouch, player)

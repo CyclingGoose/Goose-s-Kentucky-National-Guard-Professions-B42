@@ -15,3 +15,589 @@ option KNGP.Lore {
     translation =  KNGP_Lore,
     description =   KNGP_Lore,
 }
+
+option KNGPCBRNSpecialist.CBRNGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialistGear_Divider,
+    description = KNGPCBRNSpecialistGear_Divider
+}
+
+option KNGPCBRNSpecialist.CBRNSpecialistMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_MiscGear,
+    description = KNGPCBRNSpecialist_MiscGear,
+}
+
+option KNGPCBRNSpecialist.CBRNSatchel {
+    type = boolean,
+    default = true,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_Satchel,
+}
+
+option KNGPCBRNSpecialist.CBRNIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_IFAK,
+}
+
+option KNGPCBRNSpecialist.CBRNWebbing {
+    type = boolean,
+    default = true,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_Webbing,
+}
+
+option KNGPCBRNSpecialist.CBRNWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_Weapons_Divider,
+    description = KNGPCBRNSpecialist_Weapons_Divider,
+}
+
+option KNGPCBRNSpecialist.CBRNAssaultRifle {
+    type = boolean,
+    default = false,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_AssaultRifle,
+}
+
+option KNGPCBRNSpecialist.CBRNAssaultRifleMagazines {
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 10,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_AssaultRifleMagazines,
+    description = KNGPCBRNSpecialist_AssaultRifleMagazines,
+}
+
+option KNGPCBRNSpecialist.CBRNPistol {
+    type = boolean,
+    default = true,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_Pistol,
+}
+
+option KNGPCBRNSpecialist.CBRNPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPCBRNSpecialist,
+    translation = KNGPCBRNSpecialist_PistolMagazines,
+    description = KNGPCBRNSpecialist_PistolMagazines,
+}
+
+
+
+option KNGPEngineer.EngineerGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPEngineer,
+    translation = KNGPEngineerGear_Divider,
+    description = KNGPEngineerGear_Divider,
+}
+
+option KNGPEngineer.EngineerMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_MiscGear,
+    description = KNGPEngineer_MiscGear,
+}
+
+option KNGPEngineer.EngineerBackpack {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_Backpack,
+}
+
+option KNGPEngineer.EngineerIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_IFAK,
+}
+
+option KNGPEngineer.EngineerChestrig {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_Chestrig,
+}
+
+option KNGPEngineer.EngineerWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_Weapons_Divider,
+    description = KNGPEngineer_Weapons_Divider,
+}
+
+option KNGPEngineer.EngineerAssaultRifle {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_AssaultRifle,
+}
+
+option KNGPEngineer.EngineerAssaultRifleMagazines {
+    type = integer,
+    default = 3,
+    min = 0,
+    max = 10,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_AssaultRifleMagazines,
+    description = KNGPEngineer_AssaultRifleMagazines,
+}
+
+option KNGPEngineer.EngineerPistol {
+    type = boolean,
+    default = true,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_Pistol,
+}
+
+option KNGPEngineer.EngineerPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPEngineer,
+    translation = KNGPEngineer_PistolMagazines,
+    description = KNGPEngineer_PistolMagazines,
+}
+
+
+
+option KNGPMedic.MedicGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMedic,
+    translation = KNGPMedicGear_Divider,
+    description = KNGPMedicGear_Divider,
+}
+
+option KNGPMedic.MedicMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_MiscGear,
+    description = KNGPMedic_MiscGear,
+}
+
+option KNGPMedic.MedicTraumabag {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_Traumabag,
+}
+
+option KNGPMedic.MedicSatchel {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_Satchel,
+}
+
+option KNGPMedic.MedicWebbing {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_Webbing,
+}
+
+option KNGPMedic.MedicIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_IFAK,
+}
+
+option KNGPMedic.MedicWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMedic,
+    translation = KNGPMedicWeapons_Divider,
+    description = KNGPMedicWeapons_Divider,
+}
+
+option KNGPMedic.MedicAssaultRifle {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_AssaultRifle,
+}
+
+option KNGPMedic.MedicAssaultRifleMagazines {
+    type = integer,
+    default = 3,
+    min = 0,
+    max = 10,
+    page = KNGPMedic,
+    translation = KNGPMedic_AssaultRifleMagazines,
+    description = KNGPMedic_AssaultRifleMagazines,
+}
+
+option KNGPMedic.MedicPistol {
+    type = boolean,
+    default = true,
+    page = KNGPMedic,
+    translation = KNGPMedic_Pistol,
+}
+
+option KNGPMedic.MedicPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPMedic,
+    translation = KNGPMedic_PistolMagazines,
+    description = KNGPMedic_PistolMagazines,
+}
+
+
+
+option KNGPInfantry.InfantryGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPInfantry,
+    translation = KNGPInfantryGear_Divider,
+    description = KNGPInfantryGear_Divider,
+}
+
+option KNGPInfantry.InfantryMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_MiscGear,
+    description = KNGPInfantry_MiscGear,
+}
+
+option KNGPInfantry.InfantryBackpack {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_Backpack,
+}
+
+option KNGPInfantry.InfantryIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_IFAK,
+}
+
+option KNGPInfantry.InfantryChestrig {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_Chestrig,
+}
+
+option KNGPInfantry.InfantryWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_Weapons_Divider,
+    description = KNGPInfantry_Weapons_Divider,
+}
+
+option KNGPInfantry.InfantryAssaultRifle {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_AssaultRifle,
+}
+
+option KNGPInfantry.InfantryAssaultRifleMagazines {
+    type = integer,
+    default = 3,
+    min = 0,
+    max = 10,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_AssaultRifleMagazines,
+    description = KNGPInfantry_AssaultRifleMagazines,
+}
+
+option KNGPInfantry.InfantryPistol {
+    type = boolean,
+    default = true,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_Pistol,
+}
+
+option KNGPInfantry.InfantryPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPInfantry,
+    translation = KNGPInfantry_PistolMagazines,
+    description = KNGPInfantry_PistolMagazines,
+}
+
+
+
+option KNGPMilitaryPolice.MilitaryPoliceGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPoliceGear_Divider,
+    description = KNGPMilitaryPoliceGear_Divider,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_MiscGear,
+    description = KNGPMilitaryPolice_MiscGear,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceBackpack {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_Backpack,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_IFAK,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceChestrig {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_Chestrig,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_Weapons_Divider,
+    description = KNGPMilitaryPolice_Weapons_Divider,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceAssaultRifle {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_AssaultRifle,
+}
+
+option KNGPMilitaryPolice.MilitaryPoliceAssaultRifleMagazines {
+    type = integer,
+    default = 3,
+    min = 0,
+    max = 10,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_AssaultRifleMagazines,
+    description = KNGPMilitaryPolice_AssaultRifleMagazines,
+}
+
+option KNGPMilitaryPolice.MilitaryPolicePistol {
+    type = boolean,
+    default = true,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_Pistol,
+}
+
+option KNGPMilitaryPolice.MilitaryPolicePistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPMilitaryPolice,
+    translation = KNGPMilitaryPolice_PistolMagazines,
+    description = KNGPMilitaryPolice_PistolMagazines,
+}
+
+
+
+option KNGPMotorTransportOperator.MotorTransportGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperatorGear_Divider,
+    description = KNGPMotorTransportOperatorGear_Divider,
+}
+
+option KNGPMotorTransportOperator.MotorTransportOperatorMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_MiscGear,
+    description = KNGPMotorTransportOperator_MiscGear,
+}
+
+option KNGPMotorTransportOperator.MotorTransportBackpack {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_Backpack,
+}
+
+option KNGPMotorTransportOperator.MotorTransportIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_IFAK,
+}
+
+option KNGPMotorTransportOperator.MotorTransportToolbox {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_Toolbox,
+}
+
+option KNGPMotorTransportOperator.MotorTransportWebbing {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_Webbing,
+}
+
+option KNGPMotorTransportOperator.MotorTransportExtraHelmet {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_ExtraHelmet,
+}
+
+option KNGPMotorTransportOperator.MotorTransportWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_Weapons,
+    description = KNGPMotorTransportOperator_Weapons,
+}
+
+option KNGPMotorTransportOperator.MotorTransportAssaultRifle {
+    type = boolean,
+    default = false,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_AssaultRifle,
+}
+
+option KNGPMotorTransportOperator.MotorTransportAssaultRifleMagazines {
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 10,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_AssaultRifleMagazines,
+    description = KNGPMotorTransportOperator_AssaultRifleMagazines,
+}
+
+option KNGPMotorTransportOperator.MotorTransportPistol {
+    type = boolean,
+    default = true,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_Pistol,
+}
+
+option KNGPMotorTransportOperator.MotorTransportPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPMotorTransportOperator,
+    translation = KNGPMotorTransportOperator_PistolMagazines,
+    description = KNGPMotorTransportOperator_PistolMagazines,
+}
+
+
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioGearDivider {
+    type = boolean,
+    default = false,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperatorGear_Divider,
+    description = KNGPSingleChannelRadioOperatorGear_Divider,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioOperatorMiscGear {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_MiscGear,
+    description = KNGPSingleChannelRadioOperator_MiscGear,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioSatchel {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_Satchel,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioIFAK {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_IFAK,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioWebbing {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_Webbing,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioWeaponsDivider {
+    type = boolean,
+    default = false,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_Weapons,
+    description = KNGPSingleChannelRadioOperator_Weapons,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioAssaultRifle {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_AssaultRifle,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioAssaultRifleMagazines {
+    type = integer,
+    default = 3,
+    min = 0,
+    max = 10,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_AssaultRifleMagazines,
+    description = KNGPSingleChannelRadioOperator_AssaultRifleMagazines,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioPistol {
+    type = boolean,
+    default = true,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_Pistol,
+}
+
+option KNGPSingleChannelRadioOperator.SingleChannelRadioPistolMagazines {
+    type = integer,
+    default = 3,
+    min = 1,
+    max = 10,
+    page = KNGPSingleChannelRadioOperator,
+    translation = KNGPSingleChannelRadioOperator_PistolMagazines,
+    description = KNGPSingleChannelRadioOperator_PistolMagazines,
+}
